@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { AlertCircle, Home } from "lucide-react";
+import UnicornAnimation from "@/components/UnicornAnimation";
 import { useLocation } from "wouter";
 
 export default function NotFound() {
@@ -10,52 +10,36 @@ export default function NotFound() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-background text-foreground relative">
-      {/* Vertical Grid Lines */}
-      <div className="fixed inset-0 pointer-events-none z-[100]">
-        <div className="max-w-[1112px] mx-auto h-full relative">
-          <div
-            className="absolute left-0 top-0 bottom-0 w-px bg-border"
-          />
-          <div
-            className="absolute right-0 top-0 bottom-0 w-px bg-border"
-          />
-        </div>
+    <div className="min-h-screen w-full flex items-center justify-center bg-background text-foreground relative overflow-hidden">
+      {/* Background Animation */}
+      <div className="absolute inset-0 opacity-100">
+        <UnicornAnimation
+          jsonFilePath="/bg-animation-simple.json"
+          className="w-full h-full"
+        />
       </div>
 
-      <div className="w-full max-w-[1112px] mx-8 relative z-10">
-        <div className="max-w-2xl mx-auto border border-border bg-card/40 backdrop-blur-sm p-12 text-center">
-          {/* Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="relative">
-              <AlertCircle className="h-20 w-20 text-primary" />
-            </div>
-          </div>
+      {/* Content */}
+      <div className="relative z-10 text-center px-8">
+        <h1 className="font-headline text-[180px] md:text-[240px] leading-none mb-8 text-foreground">
+          404
+        </h1>
 
-          {/* 404 */}
-          <h1 className="text-8xl font-bold text-gradient-purple mb-4">404</h1>
+        <h2 className="font-headline text-4xl md:text-5xl mb-4">
+          Wrong turn.
+        </h2>
 
-          {/* Title */}
-          <h2 className="text-3xl font-bold mb-6">Page Not Found</h2>
+        <p className="text-xl text-muted-foreground mb-10 max-w-md mx-auto leading-relaxed">
+          We looked everywhere. This page doesn't exist. Sorry about that.
+        </p>
 
-          {/* Description */}
-          <p className="text-lg text-muted-foreground/80 mb-10 leading-relaxed max-w-lg mx-auto">
-            Sorry, the page you are looking for doesn't exist. It may have been moved or
-            deleted.
-          </p>
-
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={handleGoHome}
-              size="lg"
-              className="bg-primary text-primary-foreground font-medium px-8 h-12 btn-enhanced shadow-purple-glow"
-            >
-              <Home className="w-5 h-5 mr-2" />
-              Go Home
-            </Button>
-          </div>
-        </div>
+        <Button
+          onClick={handleGoHome}
+          size="lg"
+          className="bg-primary text-primary-foreground font-medium px-8 h-12"
+        >
+          Back to civilization
+        </Button>
       </div>
     </div>
   );
