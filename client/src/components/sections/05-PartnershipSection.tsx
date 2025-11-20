@@ -47,11 +47,11 @@ export function PartnershipSection({
     <Section number="04" showPatterns="both">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
-        <div className="text-center px-8 py-16 border-b border-border">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <div className="text-center px-4 md:px-8 py-12 md:py-16 border-b border-border">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             {headline}
           </h2>
-          <p className="text-lg text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
             {description}
           </p>
         </div>
@@ -68,17 +68,17 @@ export function PartnershipSection({
           {features.map((feature, idx) => (
             <div
               key={`feature-${idx}`}
-              className={`p-10 py-16 text-center ${
-                idx < features.length - 1 ? "border-r border-border" : ""
+              className={`p-6 md:p-10 py-12 md:py-16 text-center ${
+                idx < features.length - 1 ? "md:border-r border-b md:border-b-0 border-border" : ""
               }`}
             >
               <h3
-                className="text-sm uppercase tracking-widest font-medium mb-6 text-primary"
+                className="text-xs md:text-sm uppercase tracking-widest font-medium mb-4 md:mb-6 text-primary"
                 style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
               >
                 {feature.title}
               </h3>
-              <p className="text-xl text-muted-foreground/85 leading-relaxed">
+              <p className="text-lg md:text-xl text-muted-foreground/85 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -86,15 +86,15 @@ export function PartnershipSection({
         </div>
 
         {/* Highlight & CTA */}
-        <div className="text-center px-8 py-16 border-t border-border">
+        <div className="text-center px-4 md:px-8 py-12 md:py-16 border-t border-border">
           <p
-            className="text-xl md:text-2xl text-muted-foreground/90 leading-relaxed tracking-wide max-w-3xl mx-auto mb-10 transition-colors duration-300 hover:text-primary cursor-default"
+            className="text-lg md:text-xl lg:text-2xl text-muted-foreground/90 leading-relaxed tracking-wide max-w-3xl mx-auto mb-8 md:mb-10 transition-colors duration-300 hover:text-primary cursor-default"
             style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
           >
             {highlightText}
           </p>
           {ctaText && (
-            <Button variant="outline" onClick={onCtaClick}>
+            <Button variant="outline" onClick={onCtaClick} className="text-sm md:text-base">
               {ctaText}
             </Button>
           )}

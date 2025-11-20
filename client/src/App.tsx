@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import { HelmetProvider } from "react-helmet-async";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { useScrollToTop } from "./hooks/useScrollToTop";
 import Home from "./pages/Home";
 import WhatWeDo from "./pages/WhatWeDo";
 import Intelligence from "./pages/Intelligence";
@@ -12,6 +13,9 @@ import HowWeWork from "./pages/HowWeWork";
 import Branding from "./pages/Branding";
 
 function Router() {
+  // Scroll to top on route change
+  useScrollToTop();
+
   return (
     <Switch>
       <Route path={"/"} component={Home} />

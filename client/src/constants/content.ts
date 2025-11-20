@@ -90,7 +90,7 @@ export const HERO_CONTENT = {
   headline: "Raising the bar in\ncyber insurance",
   subheadline: "Specialist expertise, consultancy-led approach, and unmatched industry knowledge.",
   ctaText: "Get Protected",
-  animationPath: "/hero-bg.json",
+  animationPath: "/home-hero-animation.json",
 };
 
 // ==================== Intro Section (Logo + Tagline) ====================
@@ -133,7 +133,7 @@ export const WHAT_WE_DO_CONTENT = {
     "Assured is the UK's only insurance broker dedicated solely to cyber. General brokers, burdened with multiple insurance lines, lack bandwidth for a risk this complex. Cyber threats evolve faster than any other exposure for technology-reliant businesses, so cyber insurance cannot function as a one-off, box-ticking exercise that delivers little value.",
   quote: "Assured turns 'I think I'm covered' into 'I know I'm covered.'",
   ctaText: "What We Do",
-  animationPath: "/04-bg-animation.json",
+  animationPath: "/what-we-do-section-animation.json",
 };
 
 // ==================== Partnership Section ====================
@@ -180,7 +180,7 @@ export const COMPARISON_CONTENT = {
     },
   ],
   ctaText: "More about Assured",
-  animationPath: "/06-bg-animation.json",
+  animationPath: "/comparison-section-animation.json",
 };
 
 // ==================== Statistics Section ====================
@@ -270,13 +270,13 @@ export const FINAL_CTA_CONTENT = {
   subtitle: "Start getting comprehensive cyber insurance coverage today.",
   primaryCta: "Get Started",
   secondaryCta: "See our plans",
-  animationPath: "/10-bg-animation.json",
+  animationPath: "/cta-section-animation.json",
 };
 
 // ==================== Closing Section ====================
 
 export const CLOSING_CONTENT = {
-  animationPath: "/11-bg-animation.json",
+  animationPath: "/closing-section-animation.json",
 };
 
 // ==================== Footer ====================
@@ -348,7 +348,7 @@ export const WHAT_WE_DO_PAGE_HERO = {
   headline: "We are redefining and revolutionising cyber insurance.",
   subheadline:
     "We exclusively execute cyber insurance, and we do it with passion, care and unbeatable attention to detail. Cyber doesn't fit the traditional insurance model, it isn't a conventional risk, so it shouldn't be treated like one.",
-  animationPath: "/hero-bg.json",
+  animationPath: "/home-hero-animation.json",
 };
 
 export const WHAT_WE_DO_PAGE_CHALLENGE = {

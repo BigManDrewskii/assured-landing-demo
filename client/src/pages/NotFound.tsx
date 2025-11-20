@@ -18,10 +18,10 @@ export default function NotFound() {
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
-      {/* Background Animation */}
+      {/* 404 Page Background Animation */}
       <div className="absolute inset-0 opacity-100">
         <UnicornAnimation
-          jsonFilePath="/bg-animation-simple.json"
+          jsonFilePath="/404-page-animation.json"
           className="w-full h-full"
         />
       </div>

@@ -25,25 +25,25 @@ export function ProgressionSection({
 }: ProgressionSectionProps) {
   return (
     <Section number={number}>
-      <div className="mx-auto px-10 py-20" style={{ maxWidth: `${maxWidth}px` }}>
+      <div className="mx-auto px-4 md:px-10 py-12 md:py-20" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-12">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12">
           {number}: {title}
         </h2>
 
         {/* Introduction */}
-        <p className="text-lg text-muted-foreground/80 leading-relaxed max-w-4xl mb-16">
+        <p className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-4xl mb-12 md:mb-16">
           {intro}
         </p>
 
         {/* Subsections */}
-        <div className="max-w-4xl space-y-12">
+        <div className="max-w-4xl space-y-8 md:space-y-12">
           {subsections.map((subsection, idx) => (
             <div key={idx}>
-              <h3 className="text-xl font-bold mb-4 text-foreground">
+              <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-foreground">
                 {subsection.title}
               </h3>
-              <p className="text-lg text-muted-foreground/80 leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground/80 leading-relaxed">
                 {subsection.content}
               </p>
             </div>

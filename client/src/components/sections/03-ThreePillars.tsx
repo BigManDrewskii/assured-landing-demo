@@ -37,17 +37,17 @@ export function ThreePillars({ pillars, animationPath, maxWidth = 1112 }: ThreeP
           {pillars.map((pillar, idx) => (
             <div
               key={`pillar-${idx}`}
-              className={`text-center p-8 py-16 ${
-                idx < pillars.length - 1 ? "border-r border-border" : ""
+              className={`text-center p-6 md:p-8 py-12 md:py-16 ${
+                idx < pillars.length - 1 ? "md:border-r border-b md:border-b-0 border-border" : ""
               }`}
             >
               <h3
-                className="text-sm uppercase tracking-widest font-medium mb-6 text-primary"
+                className="text-xs md:text-sm uppercase tracking-widest font-medium mb-4 md:mb-6 text-primary"
                 style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
               >
                 {pillar.title}
               </h3>
-              <p className="text-muted-foreground/85 leading-relaxed text-xl">
+              <p className="text-muted-foreground/85 leading-relaxed text-lg md:text-xl">
                 {pillar.description}
               </p>
             </div>

@@ -44,45 +44,48 @@ export function ContactSection({
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         <div className="grid md:grid-cols-2">
           {/* Left Column - Contact Info with Animation Background */}
-          <div className="px-10 py-12 border-r border-border relative overflow-hidden">
-            {/* Background Animation */}
+          <div className="px-6 md:px-10 py-10 md:py-12 md:border-r border-b md:border-b-0 border-border relative overflow-hidden">
+            {/* Contact Column Background Animation */}
             {animationPath && (
               <div className="absolute inset-0 pointer-events-none z-0">
-                <UnicornAnimation jsonFilePath={animationPath} className="w-full h-full" />
+                <UnicornAnimation
+                  jsonFilePath={animationPath}
+                  className="w-full h-full"
+                />
               </div>
             )}
 
             {/* Content */}
             <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">{title}</h2>
-              <p className="text-base text-muted-foreground/70 mb-12 leading-relaxed max-w-sm">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 leading-tight">{title}</h2>
+              <p className="text-sm md:text-base text-muted-foreground/70 mb-8 md:mb-12 leading-relaxed max-w-sm">
                 {subtitle}
               </p>
-              <div className="space-y-6">
+              <div className="space-y-5 md:space-y-6">
                 <div>
                   <div
-                    className="text-xs text-muted-foreground/60 mb-1.5 uppercase tracking-wider"
+                    className="text-[10px] md:text-xs text-muted-foreground/60 mb-1.5 uppercase tracking-wider"
                     style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
                   >
                     Phone
                   </div>
                   <a
                     href={contactInfo.phoneHref}
-                    className="text-lg hover:text-primary transition-colors"
+                    className="text-base md:text-lg hover:text-primary transition-colors"
                   >
                     {contactInfo.phone}
                   </a>
                 </div>
                 <div>
                   <div
-                    className="text-xs text-muted-foreground/60 mb-1.5 uppercase tracking-wider"
+                    className="text-[10px] md:text-xs text-muted-foreground/60 mb-1.5 uppercase tracking-wider"
                     style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
                   >
                     Email
                   </div>
                   <a
                     href={contactInfo.emailHref}
-                    className="text-lg hover:text-primary transition-colors"
+                    className="text-base md:text-lg hover:text-primary transition-colors"
                   >
                     {contactInfo.email}
                   </a>
@@ -92,7 +95,7 @@ export function ContactSection({
           </div>
 
           {/* Right Column - Contact Form */}
-          <div className="px-10 py-12">
+          <div className="px-6 md:px-10 py-10 md:py-12">
             <ContactForm onSubmit={onSubmit} isLoading={isLoading} />
           </div>
         </div>

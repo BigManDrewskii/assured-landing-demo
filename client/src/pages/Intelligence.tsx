@@ -66,29 +66,29 @@ export default function Intelligence() {
 
       {/* Hero Section - 2 Column Layout */}
       <Section>
-        <div className="mx-auto px-10 pt-32 pb-24" style={{ maxWidth: "1112px" }}>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24" style={{ maxWidth: "1112px" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
             {/* Left: Title & Subtitle */}
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
                 {INTELLIGENCE_PAGE_HERO.title}
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground/80 leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 leading-relaxed">
                 {INTELLIGENCE_PAGE_HERO.subtitle}
               </p>
             </div>
 
             {/* Right: Featured Gallery - Top 3 Articles */}
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {featuredArticles.slice(0, 3).map((article) => (
                 <a
                   key={article.id}
                   href={article.link}
-                  className="group flex gap-4 p-4 border border-border hover:border-primary/50 transition-all hover:bg-primary/5"
+                  className="group flex gap-3 md:gap-4 p-3 md:p-4 border border-border hover:border-primary/50 transition-all hover:bg-primary/5"
                 >
                   {/* Article Image */}
                   {article.imageUrl && (
-                    <div className="w-24 h-24 flex-shrink-0 overflow-hidden bg-muted/20">
+                    <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden bg-muted/20">
                       <img
                         src={article.imageUrl}
                         alt={article.title}
@@ -99,10 +99,10 @@ export default function Intelligence() {
 
                   {/* Article Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="text-xs text-muted-foreground/60 mb-2">
+                    <div className="text-xs text-muted-foreground/60 mb-1 md:mb-2">
                       {article.date}
                     </div>
-                    <h3 className="text-base font-semibold line-clamp-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-sm md:text-base font-semibold line-clamp-2 group-hover:text-primary transition-colors">
                       {article.title}
                     </h3>
                   </div>
@@ -127,23 +127,23 @@ export default function Intelligence() {
       {/* Filtered Results OR Category Sections */}
       {hasFilters ? (
         <Section>
-          <div className="mx-auto px-8 py-12" style={{ maxWidth: "1112px" }}>
-            <p className="text-sm text-muted-foreground/70 mb-8">
+          <div className="mx-auto px-4 md:px-8 py-8 md:py-12" style={{ maxWidth: "1112px" }}>
+            <p className="text-sm text-muted-foreground/70 mb-6 md:mb-8">
               Found {filteredArticles.length} article{filteredArticles.length !== 1 ? "s" : ""}
             </p>
-            <div className="grid md:grid-cols-3 gap-px bg-border">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border">
               {filteredArticles.map((article) => (
                 <ArticleCard key={article.id} {...article} className="bg-background" />
               ))}
             </div>
             {filteredArticles.length === 0 && (
-              <div className="text-center py-20">
-                <p className="text-lg text-muted-foreground/70 mb-4">
+              <div className="text-center py-12 md:py-20">
+                <p className="text-base md:text-lg text-muted-foreground/70 mb-4">
                   No articles found matching your criteria.
                 </p>
                 <button
                   onClick={clearFilters}
-                  className="text-primary hover:underline font-medium"
+                  className="text-primary hover:underline font-medium min-h-[44px] inline-flex items-center"
                 >
                   Clear filters and show all articles
                 </button>
@@ -157,16 +157,16 @@ export default function Intelligence() {
           {trendingArticles.length > 0 && (
             <Section>
               <div className="mx-auto" style={{ maxWidth: "1112px" }}>
-                <div className="px-8 py-12 border-b border-border flex items-center justify-between">
-                  <h2 className="text-3xl md:text-4xl font-bold">Trending</h2>
-                  <span className="text-sm text-muted-foreground/70">Thirsty for more?</span>
+                <div className="px-4 md:px-8 py-8 md:py-12 border-b border-border flex items-center justify-between">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Trending</h2>
+                  <span className="text-xs md:text-sm text-muted-foreground/70 hidden sm:inline">Thirsty for more?</span>
                 </div>
-                <div className="grid md:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-3">
                   {trendingArticles.slice(0, 3).map((article, index) => (
                     <ArticleCard
                       key={article.id}
                       {...article}
-                      className={index < 2 ? "border-r border-border" : ""}
+                      className={index < 2 ? "md:border-r border-border" : ""}
                     />
                   ))}
                 </div>
@@ -221,11 +221,11 @@ export default function Intelligence() {
 
       {/* Newsletter Signup CTA */}
       <Section>
-        <div className="mx-auto px-8 py-20 text-center" style={{ maxWidth: "800px" }}>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="mx-auto px-4 md:px-8 py-12 md:py-20 text-center" style={{ maxWidth: "800px" }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
             {INTELLIGENCE_PAGE_NEWSLETTER.title}
           </h2>
-          <p className="text-lg text-muted-foreground/80 mb-8">
+          <p className="text-base md:text-lg text-muted-foreground/80 mb-6 md:mb-8">
             {INTELLIGENCE_PAGE_NEWSLETTER.subtitle}
           </p>
           <form
@@ -233,19 +233,19 @@ export default function Intelligence() {
               e.preventDefault();
               setShowNewsletter(true);
             }}
-            className="flex gap-3 max-w-md mx-auto"
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
           >
             <input
               type="email"
               placeholder="Enter your email address"
               required
-              className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors"
+              className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
             />
-            <Button type="submit" size="lg">
+            <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
               {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
             </Button>
           </form>
-          <p className="text-xs text-muted-foreground/60 mt-4">
+          <p className="text-xs text-muted-foreground/60 mt-3 md:mt-4">
             {INTELLIGENCE_PAGE_NEWSLETTER.privacyNote}
           </p>
         </div>

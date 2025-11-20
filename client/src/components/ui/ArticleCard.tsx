@@ -46,12 +46,12 @@ export function ArticleCard({
       </div>
 
       {/* Article Content */}
-      <div className="p-8">
-        <div className="text-sm text-muted-foreground/60 mb-4 font-medium">{date}</div>
-        <h3 className="text-xl font-bold mb-4 leading-snug group-hover:text-primary transition-colors">
+      <div className="p-6 md:p-8">
+        <div className="text-xs md:text-sm text-muted-foreground/60 mb-3 md:mb-4 font-medium">{date}</div>
+        <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 leading-snug group-hover:text-primary transition-colors">
           {title}
         </h3>
-        <span className="text-primary hover:underline font-medium inline-flex items-center gap-2">
+        <span className="text-sm md:text-base text-primary hover:underline font-medium inline-flex items-center gap-2">
           Read more <span>→</span>
         </span>
       </div>

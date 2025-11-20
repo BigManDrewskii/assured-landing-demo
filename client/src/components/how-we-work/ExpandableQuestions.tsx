@@ -17,9 +17,9 @@ function QuestionItem({ question, answer }: Question) {
     <div className="border-b border-border last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left py-6 flex items-start justify-between gap-4 group"
+        className="w-full text-left py-4 md:py-6 flex items-start justify-between gap-4 group min-h-[44px]"
       >
-        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors flex-1">
+        <h3 className="text-base md:text-lg font-semibold text-foreground group-hover:text-primary transition-colors flex-1">
           {question}
         </h3>
         <ChevronDown
@@ -30,10 +30,10 @@ function QuestionItem({ question, answer }: Question) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96 pb-6" : "max-h-0"
+          isOpen ? "max-h-96 pb-4 md:pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-base text-muted-foreground/80 leading-relaxed pr-8">
+        <p className="text-sm md:text-base text-muted-foreground/80 leading-relaxed pr-6 md:pr-8">
           {answer}
         </p>
       </div>

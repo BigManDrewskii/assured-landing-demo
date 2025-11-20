@@ -73,12 +73,17 @@ export function Navigation({
       <div
         className="bg-card/80 nav-blur border border-border px-6 py-4 flex justify-between items-center shadow-lg"
       >
-        {/* Logo with subtle hover animation */}
+        {/* Logo with subtle hover animation - icon on mobile, full logo on desktop */}
         <Link href="/">
+          <img
+            src="/assured-icon-white-new.svg"
+            alt={logoAlt}
+            className="h-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:opacity-80 md:hidden"
+          />
           <img
             src={logoSrc}
             alt={logoAlt}
-            className="h-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:opacity-80"
+            className="h-6 cursor-pointer transition-all duration-300 hover:scale-105 hover:opacity-80 hidden md:block"
           />
         </Link>
 
@@ -108,10 +113,10 @@ export function Navigation({
             ></span>
           </button>
 
-          {/* CTA Button */}
+          {/* CTA Button - smaller text on mobile */}
           <Button
             size="sm"
-            className="bg-primary text-primary-foreground font-medium btn-enhanced shadow-purple-glow"
+            className="bg-primary text-primary-foreground font-medium btn-enhanced shadow-purple-glow text-xs md:text-sm"
             onClick={onCtaClick}
           >
             {ctaText}
@@ -119,42 +124,42 @@ export function Navigation({
         </div>
       </div>
 
-      {/* Mega Menu */}
+      {/* Mega Menu - stacked on mobile, grid on desktop */}
       {isOpen && (
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 mt-2 bg-card border border-border shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
+          className="absolute top-full left-0 right-0 mt-2 bg-card border border-border shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 max-h-[80vh] overflow-y-auto"
         >
-          <div className="grid grid-cols-3 gap-0">
+          <div className="grid md:grid-cols-3 gap-0">
             {sections.map((section, sectionIndex) => (
               <div
                 key={section.title}
-                className={`p-6 ${sectionIndex < sections.length - 1 ? "border-r border-border" : ""}`}
+                className={`p-4 md:p-6 ${sectionIndex < sections.length - 1 ? "md:border-r border-border border-b md:border-b-0" : ""}`}
               >
                 {/* Section Header */}
-                <h3 className="text-[10px] font-notch uppercase tracking-widest text-muted-foreground/60 mb-4">
+                <h3 className="text-[10px] font-notch uppercase tracking-widest text-muted-foreground/60 mb-3 md:mb-4">
                   {section.title}
                 </h3>
 
                 {/* Section Items */}
-                <nav className="flex flex-col gap-3">
+                <nav className="flex flex-col gap-2 md:gap-3">
                   {section.items.map((link) => {
                     const isActive = link.href === location ||
                       (link.href !== "/" && location.startsWith(link.href));
                     const isHashLink = link.href.startsWith("#");
                     const isExternal = link.external;
 
-                    const cardClassName = `group relative block p-4 transition-all duration-200 border border-border hover:border-primary/50 hover:bg-primary/5 ${
+                    const cardClassName = `group relative block p-3 md:p-4 transition-all duration-200 border border-border hover:border-primary/50 hover:bg-primary/5 min-h-[44px] flex flex-col justify-center ${
                       isActive ? "border-primary/50 bg-primary/5" : ""
                     }`;
 
                     const content = (
                       <>
-                        <div className="text-sm font-notch uppercase tracking-wide text-foreground group-hover:text-primary transition-colors">
+                        <div className="text-xs md:text-sm font-notch uppercase tracking-wide text-foreground group-hover:text-primary transition-colors">
                           {link.label}
                         </div>
                         {link.description && (
-                          <div className="text-xs text-muted-foreground/70 mt-1.5 leading-relaxed">
+                          <div className="text-[10px] md:text-xs text-muted-foreground/70 mt-1 md:mt-1.5 leading-relaxed">
                             {link.description}
                           </div>
                         )}

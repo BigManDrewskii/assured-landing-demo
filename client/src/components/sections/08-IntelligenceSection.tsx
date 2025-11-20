@@ -43,7 +43,7 @@ export function IntelligenceSection({
   return (
     <Section id="intelligence" number="07" className="overflow-hidden">
       <div className="container mx-auto relative overflow-hidden" style={{ maxWidth: `${maxWidth}px` }}>
-        {/* Background Animation */}
+        {/* Intelligence Section Background Animation */}
         {animationPath && (
           <div className="absolute inset-0 pointer-events-none z-0">
             <UnicornAnimation jsonFilePath={animationPath} className="w-full h-full" />
@@ -52,9 +52,9 @@ export function IntelligenceSection({
 
         <div className="relative z-10">
         {/* Header */}
-        <div className="text-center p-8 py-16 border-b border-border">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">{title}</h2>
-          <p className="text-xl text-muted-foreground/80 leading-relaxed">{subtitle}</p>
+        <div className="text-center p-4 md:p-8 py-12 md:py-16 border-b border-border">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">{title}</h2>
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 leading-relaxed">{subtitle}</p>
         </div>
 
         {/* Articles Grid */}
@@ -63,18 +63,18 @@ export function IntelligenceSection({
             <ArticleCard
               key={article.id}
               {...article}
-              className={index < articles.length - 1 ? "border-r border-border" : ""}
+              className={index < articles.length - 1 ? "md:border-r border-b md:border-b-0 border-border" : ""}
             />
           ))}
         </div>
 
         {/* CTA */}
         {ctaText && (
-          <div className="text-center p-8 py-12 border-t border-border">
+          <div className="text-center p-4 md:p-8 py-10 md:py-12 border-t border-border">
             <Button
               variant="outline"
               size="lg"
-              className="font-medium px-8"
+              className="font-medium px-6 md:px-8 text-sm md:text-base"
               onClick={onViewMore}
             >
               {ctaText}

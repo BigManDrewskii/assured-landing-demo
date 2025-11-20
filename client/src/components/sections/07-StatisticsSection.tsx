@@ -61,7 +61,7 @@ function AnimatedNumber({ value }: AnimatedNumberProps) {
   }, [springValue]);
 
   return (
-    <div ref={ref} className="text-6xl font-bold text-primary tracking-tight mb-6">
+    <div ref={ref} className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary tracking-tight mb-4 md:mb-6">
       {prefix}
       <span>0</span>
       {suffix}
@@ -92,11 +92,11 @@ export function StatisticsSection({
     <Section number="06" showPatterns="both">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
-        <div className="text-center px-8 py-16 border-b border-border">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
+        <div className="text-center px-4 md:px-8 py-12 md:py-16 border-b border-border">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">
             {title}
           </h2>
-          <p className="text-xl text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -106,8 +106,8 @@ export function StatisticsSection({
           {stats.map((stat, idx) => (
             <div
               key={`stat-${idx}`}
-              className={`p-10 py-16 ${
-                idx < stats.length - 1 ? "border-r border-border" : ""
+              className={`p-6 md:p-10 py-12 md:py-16 ${
+                idx < stats.length - 1 ? "md:border-r border-b md:border-b-0 border-border" : ""
               } ${stat.highlighted ? "bg-primary/5" : ""}`}
             >
               {/* Animated Number */}
@@ -115,14 +115,14 @@ export function StatisticsSection({
 
               {/* Label */}
               <div
-                className="text-xl mb-4 font-medium text-muted-foreground/80 tracking-wide"
+                className="text-lg md:text-xl mb-3 md:mb-4 font-medium text-muted-foreground/80 tracking-wide"
                 style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
               >
                 {stat.label}
               </div>
 
               {/* Description */}
-              <p className="leading-relaxed text-base text-muted-foreground/80">
+              <p className="leading-relaxed text-sm md:text-base text-muted-foreground/80">
                 {stat.description}
               </p>
             </div>

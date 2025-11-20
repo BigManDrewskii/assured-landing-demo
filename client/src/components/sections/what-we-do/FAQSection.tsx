@@ -22,9 +22,9 @@ function FAQItemComponent({ item, index }: { item: FAQItem; index: number }) {
     <div className="border-b border-border last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left py-6 flex items-center justify-between gap-4 group"
+        className="w-full text-left py-4 md:py-6 flex items-center justify-between gap-4 group min-h-[44px]"
       >
-        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+        <h3 className="text-base md:text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
           {item.question}
         </h3>
         <ChevronDown
@@ -35,10 +35,10 @@ function FAQItemComponent({ item, index }: { item: FAQItem; index: number }) {
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-96 pb-6" : "max-h-0"
+          isOpen ? "max-h-96 pb-4 md:pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-base text-muted-foreground/80 leading-relaxed pr-8">
+        <p className="text-sm md:text-base text-muted-foreground/80 leading-relaxed pr-6 md:pr-8">
           {item.answer}
         </p>
       </div>
@@ -65,23 +65,23 @@ export function FAQSection({
     <Section number="05">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
-        <div className="text-center px-8 py-16 border-b border-border">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <div className="text-center px-4 md:px-8 py-12 md:py-16 border-b border-border">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight">
             {title}
           </h2>
         </div>
 
         {/* FAQ Grid - 2 columns on desktop */}
-        <div className="grid md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Left Column */}
-          <div className="px-10 py-8 border-r border-border">
+          <div className="px-4 md:px-10 py-6 md:py-8 border-b md:border-b-0 md:border-r border-border">
             {leftColumn.map((item, idx) => (
               <FAQItemComponent key={`faq-left-${idx}`} item={item} index={idx} />
             ))}
           </div>
 
           {/* Right Column */}
-          <div className="px-10 py-8">
+          <div className="px-4 md:px-10 py-6 md:py-8">
             {rightColumn.map((item, idx) => (
               <FAQItemComponent
                 key={`faq-right-${idx}`}
@@ -94,10 +94,10 @@ export function FAQSection({
 
         {/* CTA */}
         {ctaText && (
-          <div className="text-center px-8 py-12 border-t border-border">
+          <div className="text-center px-4 md:px-8 py-8 md:py-12 border-t border-border">
             <a
               href={ctaLink}
-              className="text-primary hover:underline font-medium inline-flex items-center gap-2"
+              className="text-primary hover:underline font-medium inline-flex items-center gap-2 min-h-[44px]"
             >
               {ctaText} <span>→</span>
             </a>

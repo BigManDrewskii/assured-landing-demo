@@ -49,15 +49,15 @@ export function WhatWeDoSection({
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         <div className="grid md:grid-cols-2">
           {/* Left Column - Content with its own padding */}
-          <div className="px-10 py-20 border-r border-border relative z-10 flex flex-col justify-center">
+          <div className="px-6 md:px-10 py-12 md:py-20 md:border-r border-b md:border-b-0 border-border relative z-10 flex flex-col justify-center">
             <div
-              className="text-xs text-primary font-medium mb-8 uppercase tracking-widest"
+              className="text-[10px] md:text-xs text-primary font-medium mb-6 md:mb-8 uppercase tracking-widest"
               style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
             >
               {label}
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight text-foreground">
               {headlineParts.map((part, idx) => (
                 <span key={`headline-${idx}`}>
                   {part}
@@ -66,12 +66,12 @@ export function WhatWeDoSection({
               ))}
             </h2>
 
-            <p className="text-base text-muted-foreground/70 leading-relaxed max-w-md mb-8">
+            <p className="text-sm md:text-base text-muted-foreground/70 leading-relaxed max-w-md mb-6 md:mb-8">
               {description}
             </p>
 
             {quote && (
-              <p className="text-lg font-medium text-primary/90 leading-relaxed max-w-md mb-8">
+              <p className="text-base md:text-lg font-medium text-primary/90 leading-relaxed max-w-md mb-6 md:mb-8">
                 {quote}
               </p>
             )}
@@ -80,18 +80,21 @@ export function WhatWeDoSection({
               <Button
                 variant="outline"
                 onClick={onCtaClick}
-                className="w-fit"
+                className="w-fit text-sm md:text-base"
               >
                 {ctaText}
               </Button>
             )}
           </div>
 
-          {/* Right Column - Animation with independent spacing (reaches edges) */}
-          <div className="relative overflow-hidden min-h-[400px] p-0">
+          {/* Right Column - Background Animation */}
+          <div className="relative overflow-hidden min-h-[300px] md:min-h-[400px] p-0">
             {animationPath && (
               <div className="absolute inset-0 pointer-events-none">
-                <UnicornAnimation jsonFilePath={animationPath} className="w-full h-full" />
+                <UnicornAnimation
+                  jsonFilePath={animationPath}
+                  className="w-full h-full"
+                />
               </div>
             )}
           </div>

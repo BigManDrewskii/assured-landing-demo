@@ -38,12 +38,12 @@ export function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
     setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
-  const inputStyles = "w-full px-4 py-2.5 bg-transparent border border-border focus:outline-none focus:border-primary transition-colors disabled:opacity-50";
+  const inputStyles = "w-full px-3 md:px-4 py-2.5 bg-transparent border border-border focus:outline-none focus:border-primary transition-colors disabled:opacity-50 text-sm md:text-base";
 
   return (
-    <form className="space-y-5" onSubmit={handleSubmit}>
+    <form className="space-y-4 md:space-y-5" onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name" className="block text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
+        <label htmlFor="name" className="block text-[10px] md:text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
           Name *
         </label>
         <input
@@ -58,7 +58,7 @@ export function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
+        <label htmlFor="email" className="block text-[10px] md:text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
           Email *
         </label>
         <input
@@ -73,7 +73,7 @@ export function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
+        <label htmlFor="company" className="block text-[10px] md:text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
           Company
         </label>
         <input
@@ -87,7 +87,7 @@ export function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
+        <label htmlFor="message" className="block text-[10px] md:text-xs mb-2 text-muted-foreground/60 uppercase tracking-wider" style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}>
           Message *
         </label>
         <textarea
@@ -104,7 +104,7 @@ export function ContactForm({ onSubmit, isLoading = false }: ContactFormProps) {
       <Button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-11 shadow-purple-glow"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium h-11 shadow-purple-glow text-sm md:text-base"
       >
         {isLoading ? "Sending..." : "Send Message"}
       </Button>

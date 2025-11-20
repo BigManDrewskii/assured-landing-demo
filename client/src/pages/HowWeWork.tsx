@@ -54,17 +54,17 @@ export default function HowWeWork() {
 
       {/* 01. Hero Section */}
       <Section>
-        <div className="mx-auto px-10 pt-36 pb-24 text-center" style={{ maxWidth: "1112px" }}>
+        <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24 text-center" style={{ maxWidth: "1112px" }}>
           <div
-            className="text-xs text-primary uppercase tracking-widest mb-8"
+            className="text-xs text-primary uppercase tracking-widest mb-6 md:mb-8"
             style={{ fontFamily: '"Stack Sans Notch", sans-serif' }}
           >
             {HOW_WE_WORK_PAGE_HERO.label}
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 leading-tight max-w-4xl mx-auto">
             {HOW_WE_WORK_PAGE_HERO.headline}
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed">
             {HOW_WE_WORK_PAGE_HERO.subheadline}
           </p>
         </div>
@@ -72,8 +72,8 @@ export default function HowWeWork() {
 
       {/* 02. Introduction - Three Pillars */}
       <Section>
-        <div className="mx-auto px-10 py-16" style={{ maxWidth: "1112px" }}>
-          <p className="text-lg md:text-xl text-muted-foreground/85 leading-relaxed max-w-4xl mx-auto text-center">
+        <div className="mx-auto px-4 md:px-10 py-12 md:py-16" style={{ maxWidth: "1112px" }}>
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground/85 leading-relaxed max-w-4xl mx-auto text-center">
             {HOW_WE_WORK_PAGE_INTRO.content.split("policy, preparation and progression").map((part, idx, arr) => (
               <span key={idx}>
                 {part}
@@ -117,24 +117,24 @@ export default function HowWeWork() {
 
       {/* 06. Founder Quote / CTA */}
       <Section>
-        <div className="mx-auto px-10 py-24 text-center" style={{ maxWidth: "1112px" }}>
+        <div className="mx-auto px-4 md:px-10 py-16 md:py-24 text-center" style={{ maxWidth: "1112px" }}>
           <div className="max-w-3xl mx-auto">
             {/* Quote */}
-            <div className="border-l-4 border-primary pl-8 py-6 mb-12 text-left">
-              <blockquote className="text-2xl md:text-3xl font-semibold text-foreground leading-tight mb-6">
+            <div className="border-l-4 border-primary pl-6 md:pl-8 py-4 md:py-6 mb-8 md:mb-12 text-left">
+              <blockquote className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground leading-tight mb-4 md:mb-6">
                 "{HOW_WE_WORK_FOUNDER_QUOTE.quote}"
               </blockquote>
-              <cite className="text-base text-muted-foreground/70 not-italic">
+              <cite className="text-sm md:text-base text-muted-foreground/70 not-italic">
                 — {HOW_WE_WORK_FOUNDER_QUOTE.attribution}
               </cite>
             </div>
 
             {/* CTAs */}
-            <div className="flex gap-4 justify-center">
-              <Button size="lg" className="shadow-purple-glow">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button size="lg" className="shadow-purple-glow min-h-[44px]">
                 {HOW_WE_WORK_FOUNDER_QUOTE.ctaText}
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" className="min-h-[44px]">
                 {HOW_WE_WORK_FOUNDER_QUOTE.secondaryCtaText}
               </Button>
             </div>

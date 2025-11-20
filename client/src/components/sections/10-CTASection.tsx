@@ -44,26 +44,29 @@ export function CTASection({
   return (
     <Section number="09" className="overflow-hidden">
       <div
-        className="container mx-auto px-8 py-28 relative overflow-hidden"
+        className="container mx-auto px-4 md:px-8 py-16 md:py-24 lg:py-28 relative overflow-hidden"
         style={{ maxWidth: `${maxWidth}px` }}
       >
-        {/* Background Animation */}
+        {/* CTA Background Animation */}
         {animationPath && (
           <div className="absolute inset-0 pointer-events-none z-0">
-            <UnicornAnimation jsonFilePath={animationPath} className="w-full h-full" />
+            <UnicornAnimation
+              jsonFilePath={animationPath}
+              className="w-full h-full"
+            />
           </div>
         )}
         <div className="text-center max-w-4xl mx-auto relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">{title}</h2>
-          <p className="text-xl text-muted-foreground/80 mb-12 leading-relaxed">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 leading-tight">{title}</h2>
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground/80 mb-8 md:mb-12 leading-relaxed">
             {subtitle}
           </p>
 
-          <div className="flex gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {primaryButton && (
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground font-medium px-8 h-12 btn-enhanced shadow-purple-glow"
+                className="bg-primary text-primary-foreground font-medium px-6 md:px-8 h-11 md:h-12 btn-enhanced shadow-purple-glow text-sm md:text-base"
                 onClick={primaryButton.onClick}
               >
                 {primaryButton.text}
@@ -74,7 +77,7 @@ export function CTASection({
               <Button
                 size="lg"
                 variant="outline"
-                className="font-medium px-8 h-12"
+                className="font-medium px-6 md:px-8 h-11 md:h-12 text-sm md:text-base"
                 onClick={secondaryButton.onClick}
               >
                 {secondaryButton.text}

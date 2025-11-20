@@ -27,20 +27,23 @@ export function ClosingSection({
   return (
     <Section number="10" className="overflow-hidden" noBorderBottom>
       <div
-        className="mx-auto px-8 py-36 relative overflow-hidden"
+        className="mx-auto px-4 md:px-8 py-20 md:py-28 lg:py-36 relative overflow-hidden"
         style={{ maxWidth: `${maxWidth}px` }}
       >
-        {/* Background Animation */}
+        {/* Closing Section Background Animation */}
         {animationPath && (
           <div className="absolute inset-0 pointer-events-none z-0">
-            <UnicornAnimation jsonFilePath={animationPath} className="w-full h-full" />
+            <UnicornAnimation
+              jsonFilePath={animationPath}
+              className="w-full h-full"
+            />
           </div>
         )}
 
         {/* Content */}
         {text && (
           <div className="max-w-3xl mx-auto text-center relative z-10">
-            <p className="text-lg text-muted-foreground/70 leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground/70 leading-relaxed">
               {text}
             </p>
           </div>
