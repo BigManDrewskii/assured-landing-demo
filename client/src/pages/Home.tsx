@@ -50,7 +50,7 @@ export default function Home() {
         <meta property="og:url" content="https://assured.co.uk/" />
         <meta property="og:title" content="Assured | Specialist Cyber Insurance Broker UK" />
         <meta property="og:description" content="Raising the bar in cyber insurance. Specialist expertise, consultancy-led approach, and unmatched industry knowledge." />
-        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="Assured" />
 
@@ -59,7 +59,7 @@ export default function Home() {
         <meta name="twitter:url" content="https://assured.co.uk/" />
         <meta name="twitter:title" content="Assured | Specialist Cyber Insurance Broker UK" />
         <meta name="twitter:description" content="Raising the bar in cyber insurance. Specialist expertise, consultancy-led approach, and unmatched industry knowledge." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
 
         {/* Additional */}
         <meta name="theme-color" content="#8363e9" />

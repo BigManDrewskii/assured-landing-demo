@@ -419,7 +419,7 @@ export default function Branding() {
         <meta property="og:url" content="https://assured.co.uk/branding" />
         <meta property="og:title" content="Brand Guidelines | Assured" />
         <meta property="og:description" content="Official brand guidelines with logos, colors, typography, and usage guidelines." />
-        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="Assured" />
 
@@ -427,7 +427,7 @@ export default function Branding() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brand Guidelines | Assured" />
         <meta name="twitter:description" content="Official brand guidelines with logos, colors, typography, and usage guidelines." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
       </Helmet>
 
       <Navigation sections={MENU_SECTIONS} />

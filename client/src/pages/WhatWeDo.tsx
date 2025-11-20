@@ -39,7 +39,7 @@ export default function WhatWeDo() {
         <meta property="og:url" content="https://assured.co.uk/what-we-do" />
         <meta property="og:title" content="What We Do | Cyber Insurance Services | Assured" />
         <meta property="og:description" content="Challenging traditional cyber insurance. Expert risk assessment, tailored policy solutions, and ongoing risk management." />
-        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="Assured" />
 
@@ -47,7 +47,7 @@ export default function WhatWeDo() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="What We Do | Cyber Insurance Services | Assured" />
         <meta name="twitter:description" content="Challenging traditional cyber insurance. Expert risk assessment, tailored solutions, and ongoing risk management." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
       </Helmet>
 
       <Navigation sections={MENU_SECTIONS} />

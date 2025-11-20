@@ -39,7 +39,7 @@ export default function HowWeWork() {
         <meta property="og:url" content="https://assured.co.uk/how-we-work" />
         <meta property="og:title" content="How We Work | Our 3P Approach | Assured" />
         <meta property="og:description" content="Policy, Preparation, and Progression - our consultancy-led approach to cyber insurance." />
-        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="Assured" />
 
@@ -47,7 +47,7 @@ export default function HowWeWork() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How We Work | Our 3P Approach | Assured" />
         <meta name="twitter:description" content="Policy, Preparation, and Progression - our consultancy-led approach to cyber insurance." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
       </Helmet>
 
       <Navigation sections={MENU_SECTIONS} />

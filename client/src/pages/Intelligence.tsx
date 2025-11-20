@@ -51,7 +51,7 @@ export default function Intelligence() {
         <meta property="og:url" content="https://assured.co.uk/intelligence" />
         <meta property="og:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
         <meta property="og:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
-        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="Assured" />
 
@@ -59,7 +59,7 @@ export default function Intelligence() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
         <meta name="twitter:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
       </Helmet>
 
       <Navigation sections={MENU_SECTIONS} />
