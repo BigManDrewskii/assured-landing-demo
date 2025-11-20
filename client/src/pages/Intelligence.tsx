@@ -77,36 +77,69 @@ export default function Intelligence() {
               </p>
             </div>
 
-            {/* Right: Featured Gallery - Top 3 Articles */}
-            <div className="space-y-3 md:space-y-4">
-              {featuredArticles.slice(0, 3).map((article) => (
+            {/* Right: Featured Articles - Elegant Layout */}
+            <div className="space-y-6">
+              {/* Primary Featured Article - Large Hero Treatment */}
+              {featuredArticles[0] && (
                 <a
-                  key={article.id}
-                  href={article.link}
-                  className="group flex gap-3 md:gap-4 p-3 md:p-4 border border-border hover:border-primary/50 transition-all hover:bg-primary/5"
+                  href={featuredArticles[0].link}
+                  className="group block border border-border hover:border-primary/50 transition-all overflow-hidden"
                 >
-                  {/* Article Image */}
-                  {article.imageUrl && (
-                    <div className="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden bg-muted/20">
-                      <img
-                        src={article.imageUrl}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
+                  {/* Featured Image */}
+                  <div className="aspect-video overflow-hidden bg-muted/20 border-b border-border">
+                    <img
+                      src={featuredArticles[0].imageUrl}
+                      alt={featuredArticles[0].title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
 
-                  {/* Article Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="text-xs text-muted-foreground/60 mb-1 md:mb-2">
-                      {article.date}
+                  {/* Featured Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="font-notch text-xs uppercase tracking-wider text-primary">
+                        Featured
+                      </span>
+                      <span className="text-sm text-muted-foreground/60">
+                        {featuredArticles[0].date}
+                      </span>
                     </div>
-                    <h3 className="text-sm md:text-base font-semibold line-clamp-2 group-hover:text-primary transition-colors">
-                      {article.title}
+                    <h3 className="text-xl font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2">
+                      {featuredArticles[0].title}
                     </h3>
                   </div>
                 </a>
-              ))}
+              )}
+
+              {/* Secondary Featured Articles - Smaller Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {featuredArticles.slice(1, 3).map((article) => (
+                  <a
+                    key={article.id}
+                    href={article.link}
+                    className="group block border border-border hover:border-primary/50 transition-all overflow-hidden"
+                  >
+                    {/* Article Image */}
+                    <div className="aspect-video overflow-hidden bg-muted/20 border-b border-border">
+                      <img
+                        src={article.imageUrl}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+
+                    {/* Article Content */}
+                    <div className="p-4">
+                      <div className="text-xs text-muted-foreground/60 mb-2">
+                        {article.date}
+                      </div>
+                      <h4 className="text-sm font-semibold line-clamp-2 group-hover:text-primary transition-colors leading-tight">
+                        {article.title}
+                      </h4>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
