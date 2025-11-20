@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GridContainer } from "@/components/layout/GridContainer";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -40,6 +41,27 @@ export default function Intelligence() {
 
   return (
     <GridContainer>
+      <Helmet>
+        <title>Intelligence Hub | Cyber Security Insights & Analysis | Assured</title>
+        <meta name="description" content="Expert insights on cyber threats, industry trends, and risk management. Features, weekly briefings, interviews, and expert opinions from cyber insurance specialists." />
+        <link rel="canonical" href="https://assured.co.uk/intelligence" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assured.co.uk/intelligence" />
+        <meta property="og:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
+        <meta property="og:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
+        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="Assured" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
+        <meta name="twitter:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+      </Helmet>
+
       <Navigation sections={MENU_SECTIONS} />
 
       {/* Hero Section - 2 Column Layout */}

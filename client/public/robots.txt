@@ -1,0 +1,7 @@
+# robots.txt for Assured Landing
+User-agent: *
+Allow: /
+Disallow: /404
+
+# Sitemap
+Sitemap: https://assured.co.uk/sitemap.xml

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GridContainer } from "@/components/layout/GridContainer";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -28,6 +29,27 @@ import {
 export default function HowWeWork() {
   return (
     <GridContainer>
+      <Helmet>
+        <title>How We Work | Our 3P Approach | Policy, Preparation & Progression | Assured</title>
+        <meta name="description" content="Our consultancy-led approach: Policy - finding the right coverage, Preparation - strengthening your defenses, Progression - continuous improvement and adaptation." />
+        <link rel="canonical" href="https://assured.co.uk/how-we-work" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assured.co.uk/how-we-work" />
+        <meta property="og:title" content="How We Work | Our 3P Approach | Assured" />
+        <meta property="og:description" content="Policy, Preparation, and Progression - our consultancy-led approach to cyber insurance." />
+        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="Assured" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How We Work | Our 3P Approach | Assured" />
+        <meta name="twitter:description" content="Policy, Preparation, and Progression - our consultancy-led approach to cyber insurance." />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+      </Helmet>
+
       <Navigation sections={MENU_SECTIONS} />
 
       {/* 01. Hero Section */}

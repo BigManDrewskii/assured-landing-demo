@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GridContainer } from "@/components/layout/GridContainer";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -14,7 +15,7 @@ import {
   FOOTER_ANIMATION_PATH,
 } from "@/constants/content";
 import { useState } from "react";
-import { Check, X, Copy } from "lucide-react";
+import { Check, X } from "lucide-react";
 
 const COLORS = [
   {
@@ -408,6 +409,27 @@ function GuidelineCard({
 export default function Branding() {
   return (
     <GridContainer>
+      <Helmet>
+        <title>Brand Guidelines | Logos, Colors & Typography | Assured</title>
+        <meta name="description" content="Official Assured brand guidelines. Download logos, view color palettes with tints and shades, typography specifications, and usage guidelines for representing our brand." />
+        <link rel="canonical" href="https://assured.co.uk/branding" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assured.co.uk/branding" />
+        <meta property="og:title" content="Brand Guidelines | Assured" />
+        <meta property="og:description" content="Official brand guidelines with logos, colors, typography, and usage guidelines." />
+        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="Assured" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Brand Guidelines | Assured" />
+        <meta name="twitter:description" content="Official brand guidelines with logos, colors, typography, and usage guidelines." />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+      </Helmet>
+
       <Navigation sections={MENU_SECTIONS} />
 
       {/* Hero / Title */}

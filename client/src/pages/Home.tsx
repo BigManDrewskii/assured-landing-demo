@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GridContainer } from "@/components/layout/GridContainer";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -39,6 +40,53 @@ import {
 export default function Home() {
   return (
     <GridContainer>
+      <Helmet>
+        <title>Assured | Specialist Cyber Insurance Broker UK | Expert Protection</title>
+        <meta name="description" content="Raising the bar in cyber insurance. Specialist expertise, consultancy-led approach, and unmatched industry knowledge. Protecting UK businesses from cyber threats." />
+        <link rel="canonical" href="https://assured.co.uk/" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assured.co.uk/" />
+        <meta property="og:title" content="Assured | Specialist Cyber Insurance Broker UK" />
+        <meta property="og:description" content="Raising the bar in cyber insurance. Specialist expertise, consultancy-led approach, and unmatched industry knowledge." />
+        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="Assured" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://assured.co.uk/" />
+        <meta name="twitter:title" content="Assured | Specialist Cyber Insurance Broker UK" />
+        <meta name="twitter:description" content="Raising the bar in cyber insurance. Specialist expertise, consultancy-led approach, and unmatched industry knowledge." />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+
+        {/* Additional */}
+        <meta name="theme-color" content="#8363e9" />
+
+        {/* Structured Data - Organization */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Assured",
+            "url": "https://assured.co.uk",
+            "logo": "https://assured.co.uk/assured-logo-white-new.svg",
+            "description": "Specialist cyber insurance broker providing expert protection for UK businesses",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+44-1234-567890",
+              "contactType": "Customer Service",
+              "areaServed": "GB",
+              "availableLanguage": "English"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/assured"
+            ]
+          })}
+        </script>
+      </Helmet>
+
       <Navigation sections={MENU_SECTIONS} />
 
       <HeroSection

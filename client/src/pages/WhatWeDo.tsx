@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GridContainer } from "@/components/layout/GridContainer";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
@@ -28,6 +29,27 @@ import {
 export default function WhatWeDo() {
   return (
     <GridContainer>
+      <Helmet>
+        <title>What We Do | Cyber Insurance Services | Assured</title>
+        <meta name="description" content="Challenging traditional cyber insurance. Expert risk assessment, tailored policy solutions, ongoing risk management, and consultancy-led cyber protection services." />
+        <link rel="canonical" href="https://assured.co.uk/what-we-do" />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://assured.co.uk/what-we-do" />
+        <meta property="og:title" content="What We Do | Cyber Insurance Services | Assured" />
+        <meta property="og:description" content="Challenging traditional cyber insurance. Expert risk assessment, tailored policy solutions, and ongoing risk management." />
+        <meta property="og:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="Assured" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What We Do | Cyber Insurance Services | Assured" />
+        <meta name="twitter:description" content="Challenging traditional cyber insurance. Expert risk assessment, tailored solutions, and ongoing risk management." />
+        <meta name="twitter:image" content="https://assured.co.uk/assured-logo-white-new.svg" />
+      </Helmet>
+
       <Navigation sections={MENU_SECTIONS} />
 
       {/* 01. Hero Section */}

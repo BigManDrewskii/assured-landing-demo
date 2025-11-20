@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import UnicornAnimation from "@/components/UnicornAnimation";
 import { useLocation } from "wouter";
@@ -11,6 +12,12 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-background text-foreground relative overflow-hidden">
+      <Helmet>
+        <title>Page Not Found | Assured</title>
+        <meta name="description" content="The page you're looking for doesn't exist." />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+
       {/* Background Animation */}
       <div className="absolute inset-0 opacity-100">
         <UnicornAnimation
