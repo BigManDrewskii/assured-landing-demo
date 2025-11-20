@@ -48,18 +48,17 @@ export default function Intelligence() {
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://assured.co.uk/intelligence" />
+        <meta property="og:site_name" content="Assured" />
         <meta property="og:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
         <meta property="og:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
-        <meta property="og:image" content="https://assured.co.uk/assured-og.png" />
+        <meta property="og:image" content="/assured-og.png" />
         <meta property="og:locale" content="en_GB" />
-        <meta property="og:site_name" content="Assured" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Intelligence Hub | Cyber Security Insights | Assured" />
         <meta name="twitter:description" content="Expert insights on cyber threats, industry trends, and risk management from cyber insurance specialists." />
-        <meta name="twitter:image" content="https://assured.co.uk/assured-og.png" />
+        <meta name="twitter:image" content="/assured-og.png" />
       </Helmet>
 
       <Navigation sections={MENU_SECTIONS} />
