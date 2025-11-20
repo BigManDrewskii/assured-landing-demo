@@ -8,8 +8,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import Home from "./pages/Home";
 import WhatWeDo from "./pages/WhatWeDo";
-import Intelligence from "./pages/Intelligence";
 import HowWeWork from "./pages/HowWeWork";
+import Intelligence from "./pages/Intelligence";
+import About from "./pages/About";
 import Branding from "./pages/Branding";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path={"/what-we-do"} component={WhatWeDo} />
       <Route path={"/how-we-work"} component={HowWeWork} />
       <Route path={"/intelligence"} component={Intelligence} />
+      <Route path={"/about"} component={About} />
       <Route path={"/branding"} component={Branding} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

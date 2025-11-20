@@ -63,7 +63,7 @@ export const MENU_SECTIONS: MenuSection[] = [
     title: "COMPANY",
     items: [
       {
-        href: "#about",
+        href: "/about",
         label: "ABOUT",
         description: "Raising the bar in cyber insurance"
       },
@@ -796,4 +796,67 @@ export const HOW_WE_WORK_FOUNDER_QUOTE = {
   attribution: "Henry Green, Founder",
   ctaText: "Get Started",
   secondaryCtaText: "See our work",
+};
+
+// ==================== ABOUT PAGE ====================
+
+export const ABOUT_PAGE_HERO = {
+  headline: "About Assured.",
+  subheadline: "You've undoubtedly landed on this page hoping for a no-nonsense explanation of what we do. So that's what you'll get. Welcome to our world.",
+};
+
+export const ABOUT_PAGE_INTRO = {
+  mainContent: [
+    "We're the UK's first (and thus far only) exclusive cyber insurance broker. We match our clients to the right policies (ones that actually pay out), but the value we deliver far exceeds just a policy.",
+    "Sceptical about cyber insurance? You're not alone. It's easy to say \"but we're different\", but we don't just say we're different. We live by it. And we're not just different from those that came before us. We're better.",
+    "We provide our clients with the planning, preparation and policies to cover their business before, during and after a cyber incident. Let's face it, there are continuously evolving cyber threats plaguing businesses and executives worldwide, and even the most thorough security defences can (and will) fail. We're there as a security blanket when possibly the worst professional day of their career occurs, ensuring their business gets back up and running as quickly and painlessly as possible.",
+  ],
+  pullQuote: "We are passionate about working with the cybersecurity industry and believe collaboration is the only way forward. Cyber insurance is not a replacement for cybersecurity.",
+};
+
+export const ABOUT_PAGE_COLLABORATION = {
+  content: "We are passionate about working with the cybersecurity industry and believe collaboration is the only way forward. Cyber insurance is not a replacement for cybersecurity. On the contrary, obtaining insurance without a demonstration of good security posture is impossible. That's why we sit at the beating heart of the cyber industry, working with high-profile partners perfectly placed to deliver real-time security feedback, incident planning and resilience enhancement.",
+};
+
+export const ABOUT_PAGE_CLIENT_PRIVACY = {
+  headline: "Our clients are our business (no offense).",
+  content: "Whilst we'd love to shout loud and proud about all our clients, we understand and respect the need for discretion and privacy in the world of cybersecurity and cyber insurance. If it's not in our clients' best interest to advertise their custom on our website, we're not going to do it. They come first. That said, once we have a signed NDA in place, we're more than happy (actually, ecstatic) to share client testimonials and case studies with you. Bring it on.",
+};
+
+export const ABOUT_PAGE_INTELLIGENCE_PLATFORM = {
+  headline: "Assured is about so much more than insurance.",
+  content: "It's about empowering execs with the confidence to discuss cyber, delivering assurance that they are taking the steps needed to secure and protect their business. That's why we've launched Assured Intelligence, a content platform specifically tailored for senior execs. We practice what we preach, and we preach what we practice, and as such we take it upon ourselves to invest in our own cyber knowledge, inviting execs to join us by indulging in our high-quality, independent editorial.",
+  ctaText: "Enter our world of content",
+  ctaLink: "/intelligence",
+};
+
+export const ABOUT_PAGE_TEAM = {
+  headline: "Hey, nice to meet you.",
+  members: [
+    {
+      name: "Henry Green",
+      role: "Founder",
+      bio: "As founder of Assured, Henry is the strategic driving force. Having been part of a high-performance and client-centric team at Alpha Group PLC, Henry took the opportunity to deploy his version of this model in the cyber insurance market, passionate about making meaningful change. Henry has built a unique founding team, ready to change the face of cyber insurance.",
+      imageUrl: "/assured-article-banners/Henry-Green-Founder-Assured.jpeg",
+    },
+    {
+      name: "Edward Ventham",
+      role: "Co-founder",
+      bio: "Ed is co-founder of Assured. He has spent a decade working with businesses around the globe to achieve insurance coverage, specialising in cyber and fintech risks. Ed was a Next Generation Insurance Network director and practice leader for UNIBA's Cyber Centre of Excellence. He currently holds roles as a mentor within Startupbootcamp and as an advisor to the NCSC i100 initiative.",
+      imageUrl: "/assured-article-banners/Edward-Ventham-Co-founder-Assured.jpg",
+    },
+    {
+      name: "Eleanor Dallaway",
+      role: "Co-founder",
+      bio: "Eleanor is co-founder and content director at Assured. Eleanor was editor of Infosecurity for 15 years and is published in The Guardian, The Sunday Times and The Times. Eleanor founded the Women in Cybersecurity network, advised the Conservative Government on cybersecurity strategy and won the Woman of Influence EWF award and various BT journalism awards.",
+      imageUrl: "/assured-article-banners/Eleanor-Dallaway-Co-founder-Assured.jpg",
+    },
+  ],
+};
+
+export const ABOUT_PAGE_CONTACT_CTA = {
+  headline: "We're waiting for your call.",
+  leftContent: "We will not talk cyber or insurance until we have a good grasp of the business model. For a policy to be all-encompassing, we need answers that will not fit on a questionnaire submission form.",
+  rightContent: "Whether you have existing cyber cover or not, contact our team for an impartial and expert opinion on the policies and options available. Call 020 3854 4270, email us directly to hello@assured.co.uk or use our enquiry form below.",
+  ctaText: "Contact us",
 };
