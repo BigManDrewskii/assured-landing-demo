@@ -9,7 +9,7 @@ import { FilterBar } from "@/components/intelligence/FilterBar";
 import { CategorySection } from "@/components/intelligence/CategorySection";
 import { NewsletterModal } from "@/components/intelligence/NewsletterModal";
 import { useArticleFilter } from "@/hooks/useArticleFilter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   MENU_SECTIONS,
   CONTACT_INFO,
@@ -24,6 +24,8 @@ import {
 
 export default function Intelligence() {
   const [showNewsletter, setShowNewsletter] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const {
     filters,
@@ -38,6 +40,19 @@ export default function Intelligence() {
   } = useArticleFilter(ALL_ARTICLES);
 
   const hasFilters = filters.category !== "all" || filters.searchQuery !== "";
+
+  // Auto-rotate carousel through featured articles
+  useEffect(() => {
+    if (isHovered || featuredArticles.length === 0) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % Math.min(3, featuredArticles.length));
+    }, 6000); // Change every 6 seconds
+
+    return () => clearInterval(interval);
+  }, [isHovered, featuredArticles.length]);
+
+  const currentFeatured = featuredArticles[currentSlide];
 
   return (
     <GridContainer>
@@ -63,83 +78,83 @@ export default function Intelligence() {
 
       <Navigation sections={MENU_SECTIONS} />
 
-      {/* Hero Section - 2 Column Layout */}
+      {/* Hero Section - Carousel with Article Backgrounds */}
       <Section>
-        <div className="mx-auto px-4 md:px-10 pt-40 pb-24 md:pt-52 md:pb-32" style={{ maxWidth: "1112px" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-            {/* Left: Title & Subtitle */}
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
+        <div
+          className="relative min-h-[600px] md:min-h-[700px] overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Background Images - Cycling */}
+          {featuredArticles.slice(0, 3).map((article, index) => (
+            <div
+              key={article.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+
+          {/* Content Overlay */}
+          <div className="relative z-20 mx-auto px-4 md:px-10 h-full flex flex-col justify-center" style={{ maxWidth: "1112px" }}>
+            {/* Page Title & Subtitle */}
+            <div className="text-center mb-16 md:mb-20">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-white">
                 {INTELLIGENCE_PAGE_HERO.title}
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 leading-snug tracking-tight">
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-snug tracking-tight max-w-3xl mx-auto">
                 {INTELLIGENCE_PAGE_HERO.subtitle}
               </p>
             </div>
 
-            {/* Right: Featured Articles - Elegant Layout */}
-            <div className="space-y-6">
-              {/* Primary Featured Article - Large Hero Treatment */}
-              {featuredArticles[0] && (
-                <a
-                  href={featuredArticles[0].link}
-                  className="group block border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all overflow-hidden"
-                >
-                  {/* Featured Image */}
-                  <div className="aspect-video overflow-hidden bg-muted/20 border-b border-border">
-                    <img
-                      src={featuredArticles[0].imageUrl}
-                      alt={featuredArticles[0].title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Featured Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="font-notch text-xs uppercase tracking-wider text-primary">
-                        Featured
-                      </span>
-                      <span className="text-sm text-muted-foreground/60">
-                        {featuredArticles[0].date}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                      {featuredArticles[0].title}
-                    </h3>
-                  </div>
+            {/* Current Featured Article Info */}
+            {currentFeatured && (
+              <div className="max-w-4xl mx-auto text-center">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <span className="font-notch text-xs uppercase tracking-wider text-primary">
+                    Featured
+                  </span>
+                  <span className="text-sm text-white/70">
+                    {currentFeatured.date}
+                  </span>
+                </div>
+                <a href={currentFeatured.link} className="group">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-primary transition-colors">
+                    {currentFeatured.title}
+                  </h2>
+                  {currentFeatured.excerpt && (
+                    <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
+                      {currentFeatured.excerpt}
+                    </p>
+                  )}
+                  <span className="text-sm text-primary hover:underline">
+                    Read Article →
+                  </span>
                 </a>
-              )}
-
-              {/* Secondary Featured Articles - Smaller Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                {featuredArticles.slice(1, 3).map((article) => (
-                  <a
-                    key={article.id}
-                    href={article.link}
-                    className="group block border border-border hover:border-primary/50 transition-all overflow-hidden"
-                  >
-                    {/* Article Image */}
-                    <div className="aspect-video overflow-hidden bg-muted/20 border-b border-border">
-                      <img
-                        src={article.imageUrl}
-                        alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    {/* Article Content */}
-                    <div className="p-4">
-                      <div className="text-xs text-muted-foreground/60 mb-2">
-                        {article.date}
-                      </div>
-                      <h4 className="text-sm font-semibold line-clamp-2 group-hover:text-primary transition-colors leading-tight">
-                        {article.title}
-                      </h4>
-                    </div>
-                  </a>
-                ))}
               </div>
+            )}
+
+            {/* Navigation Dots */}
+            <div className="flex items-center justify-center gap-3 mt-12">
+              {featuredArticles.slice(0, 3).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? "bg-primary w-8"
+                      : "bg-white/40 hover:bg-white/60"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -185,27 +200,6 @@ export default function Intelligence() {
         </Section>
       ) : (
         <>
-          {/* Trending Section */}
-          {trendingArticles.length > 0 && (
-            <Section showPatterns="both">
-              <div className="mx-auto" style={{ maxWidth: "1112px" }}>
-                <div className="px-4 md:px-8 py-8 md:py-12 border-b border-border flex items-center justify-between">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Trending</h2>
-                  <span className="text-xs md:text-sm text-muted-foreground/70 hidden sm:inline">Thirsty for more?</span>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3">
-                  {trendingArticles.slice(0, 3).map((article, index) => (
-                    <ArticleCard
-                      key={article.id}
-                      {...article}
-                      className={index < 2 ? "md:border-r border-border" : ""}
-                    />
-                  ))}
-                </div>
-              </div>
-            </Section>
-          )}
-
           {/* Category Sections - Alternating Layouts and Patterns */}
 
           {/* Assured Reacts - 3 Column */}
