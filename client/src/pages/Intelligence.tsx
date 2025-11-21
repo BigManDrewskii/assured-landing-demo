@@ -269,50 +269,45 @@ export default function Intelligence() {
       )}
 
       {/* Newsletter Signup CTA */}
-      <Section>
+      <Section className="relative">
+        {/* Background Pattern - Full Section Width */}
         <div
-          className="mx-auto px-4 md:px-8 py-12 md:py-20 text-center relative"
-          style={{ maxWidth: "800px" }}
-        >
-          {/* Background Pattern */}
-          <div
-            className="absolute inset-0 opacity-100 pointer-events-none"
-            style={{
-              backgroundImage: "url(/squared_metal.png)",
-              backgroundSize: "200px 200px",
-              backgroundRepeat: "repeat"
-            }}
-          />
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: "url(/squared_metal.png)",
+            backgroundSize: "200px 200px",
+            backgroundRepeat: "repeat"
+          }}
+        />
 
-          {/* Content */}
-          <div className="relative z-10">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-              {INTELLIGENCE_PAGE_NEWSLETTER.title}
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground/80 mb-6 md:mb-8">
-              {INTELLIGENCE_PAGE_NEWSLETTER.subtitle}
-            </p>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setShowNewsletter(true);
-              }}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                required
-                className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
-              />
-              <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
-                {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
-              </Button>
-            </form>
-            <p className="text-xs text-muted-foreground/60 mt-3 md:mt-4">
-              {INTELLIGENCE_PAGE_NEWSLETTER.privacyNote}
-            </p>
-          </div>
+        {/* Content Container */}
+        <div className="mx-auto px-4 md:px-8 py-12 md:py-20 text-center relative z-10" style={{ maxWidth: "800px" }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+            {INTELLIGENCE_PAGE_NEWSLETTER.title}
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground/80 mb-6 md:mb-8">
+            {INTELLIGENCE_PAGE_NEWSLETTER.subtitle}
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setShowNewsletter(true);
+            }}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+              className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
+            />
+            <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
+              {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
+            </Button>
+          </form>
+          <p className="text-xs text-muted-foreground/60 mt-3 md:mt-4">
+            {INTELLIGENCE_PAGE_NEWSLETTER.privacyNote}
+          </p>
         </div>
       </Section>
 
