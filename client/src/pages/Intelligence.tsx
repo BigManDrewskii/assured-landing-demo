@@ -78,18 +78,19 @@ export default function Intelligence() {
 
       <Navigation sections={MENU_SECTIONS} />
 
-      {/* Hero Section - Full Carousel Backgrounds */}
-      <Section>
+      {/* Hero Section - Carousel with Standard Container Treatment */}
+      <Section className="overflow-hidden bg-background">
         <div
-          className="relative min-h-[600px] md:min-h-[700px] overflow-hidden"
+          className="mx-auto px-4 md:px-8 pt-40 pb-16 md:pt-52 md:pb-32 relative overflow-hidden min-h-[600px] md:min-h-[700px] flex items-center"
+          style={{ maxWidth: "1112px" }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Background Images - Cycling (Full Section) */}
+          {/* Background Images - Cycling (Contained within 1112px container) */}
           {featuredArticles.slice(0, 3).map((article, index) => (
             <div
               key={article.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
+              className={`absolute inset-0 transition-opacity duration-1000 pointer-events-none z-0 ${
                 index === currentSlide ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -102,59 +103,57 @@ export default function Intelligence() {
             </div>
           ))}
 
-          {/* Content Overlay - Featured Article Fills Hero Space */}
-          <div className="relative z-20 h-full flex flex-col justify-center">
-            <div className="mx-auto px-4 md:px-10 py-16 md:py-20" style={{ maxWidth: "1112px" }}>
-              {currentFeatured && (
-                <div className="max-w-5xl mx-auto text-center">
-                  {/* Featured Badge & Date */}
-                  <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
-                    <span className="font-notch text-xs md:text-sm uppercase tracking-wider text-primary">
-                      Featured Article
-                    </span>
-                    <span className="text-sm md:text-base text-white/70">
-                      {currentFeatured.date}
-                    </span>
-                  </div>
-
-                  {/* Featured Article Title - THE HERO */}
-                  <a href={currentFeatured.link} className="group block">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 md:mb-10 leading-[1.1] group-hover:text-primary transition-colors">
-                      {currentFeatured.title}
-                    </h1>
-
-                    {/* Excerpt */}
-                    {currentFeatured.excerpt && (
-                      <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
-                        {currentFeatured.excerpt}
-                      </p>
-                    )}
-
-                    {/* CTA */}
-                    <span className="inline-flex items-center gap-2 text-base md:text-lg text-primary hover:underline font-medium">
-                      Read Full Article →
-                    </span>
-                  </a>
+          {/* Content - Featured Article as Hero */}
+          <div className="max-w-5xl mx-auto text-center relative z-10 w-full">
+            {currentFeatured && (
+              <>
+                {/* Featured Badge & Date */}
+                <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
+                  <span className="font-notch text-xs md:text-sm uppercase tracking-wider text-primary">
+                    Featured Article
+                  </span>
+                  <span className="text-sm md:text-base text-white/70">
+                    {currentFeatured.date}
+                  </span>
                 </div>
-              )}
 
-              {/* Navigation Dots */}
-              <div className="flex items-center justify-center gap-3 mt-16 md:mt-20">
-                {featuredArticles.slice(0, 3).map((_, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentSlide
-                        ? "bg-primary w-8"
-                        : "bg-white/40 hover:bg-white/60"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
+                {/* Featured Article Title - THE HERO */}
+                <a href={currentFeatured.link} className="group block">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 md:mb-10 leading-[1.1] group-hover:text-primary transition-colors">
+                    {currentFeatured.title}
+                  </h1>
+
+                  {/* Excerpt */}
+                  {currentFeatured.excerpt && (
+                    <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
+                      {currentFeatured.excerpt}
+                    </p>
+                  )}
+
+                  {/* CTA */}
+                  <span className="inline-flex items-center gap-2 text-base md:text-lg text-primary hover:underline font-medium">
+                    Read Full Article →
+                  </span>
+                </a>
+
+                {/* Navigation Dots */}
+                <div className="flex items-center justify-center gap-3 mt-16 md:mt-20">
+                  {featuredArticles.slice(0, 3).map((_, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentSlide
+                          ? "bg-primary w-8"
+                          : "bg-white/40 hover:bg-white/60"
+                      }`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </Section>
@@ -277,7 +276,7 @@ export default function Intelligence() {
         >
           {/* Background Pattern */}
           <div
-            className="absolute inset-0 opacity-5 pointer-events-none"
+            className="absolute inset-0 opacity-100 pointer-events-none"
             style={{
               backgroundImage: "url(/squared_metal.png)",
               backgroundSize: "200px 200px",
