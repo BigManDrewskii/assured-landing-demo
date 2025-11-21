@@ -109,30 +109,23 @@ export default function About() {
         </div>
       </Section>
 
-      {/* 05. Intelligence Platform Section - Two Column 50/50 */}
+      {/* 05. Intelligence Platform Section - Single Column Centered */}
       <Section number="05">
-        <div className="mx-auto px-4 md:px-10 py-12 md:py-20" style={{ maxWidth: "1112px" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            {/* Left: Content */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                {ABOUT_PAGE_INTELLIGENCE_PLATFORM.headline}
-              </h2>
-              <p className="text-base md:text-lg text-muted-foreground/85 leading-relaxed">
-                {ABOUT_PAGE_INTELLIGENCE_PLATFORM.content}
-              </p>
-            </div>
-
-            {/* Right: CTA */}
-            <div className="flex justify-center md:justify-end">
-              <Button
-                onClick={() => setLocation(ABOUT_PAGE_INTELLIGENCE_PLATFORM.ctaLink)}
-                size="lg"
-                className="bg-primary text-primary-foreground font-medium px-8 h-12"
-              >
-                {ABOUT_PAGE_INTELLIGENCE_PLATFORM.ctaText}
-              </Button>
-            </div>
+        <div className="mx-auto px-4 md:px-10 py-16 md:py-24" style={{ maxWidth: "1112px" }}>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-10 leading-tight">
+              {ABOUT_PAGE_INTELLIGENCE_PLATFORM.headline}
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-muted-foreground/85 leading-relaxed mb-10 md:mb-12">
+              {ABOUT_PAGE_INTELLIGENCE_PLATFORM.content}
+            </p>
+            <Button
+              onClick={() => setLocation(ABOUT_PAGE_INTELLIGENCE_PLATFORM.ctaLink)}
+              size="lg"
+              className="bg-primary text-primary-foreground font-medium px-8 h-12 min-h-[44px]"
+            >
+              {ABOUT_PAGE_INTELLIGENCE_PLATFORM.ctaText}
+            </Button>
           </div>
         </div>
       </Section>
@@ -159,10 +152,10 @@ export default function About() {
                 {/* Member Info */}
                 <div className="p-6 md:p-8">
                   <h3 className="text-xl md:text-2xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-sm font-notch uppercase tracking-wider text-primary mb-4">
+                  <p className="text-sm font-notch uppercase tracking-wider text-primary mb-6">
                     {member.role}
                   </p>
-                  <p className="text-sm md:text-base text-muted-foreground/85 leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground/85 leading-[1.8]">
                     {member.bio}
                   </p>
                 </div>
