@@ -104,47 +104,43 @@ export default function Intelligence() {
               </div>
             ))}
 
-            {/* Content Overlay */}
-            <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 py-12">
-              {/* Page Title & Subtitle */}
-              <div className="text-center mb-12 md:mb-16">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-white">
-                  {INTELLIGENCE_PAGE_HERO.title}
-                </h1>
-                <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-snug tracking-tight max-w-3xl mx-auto">
-                  {INTELLIGENCE_PAGE_HERO.subtitle}
-                </p>
-              </div>
-
-              {/* Current Featured Article Info */}
+            {/* Content Overlay - Featured Article as Hero */}
+            <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
               {currentFeatured && (
-                <div className="max-w-4xl mx-auto text-center">
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <span className="font-notch text-xs uppercase tracking-wider text-primary">
-                      Featured
+                <div className="max-w-5xl mx-auto text-center">
+                  {/* Featured Badge & Date */}
+                  <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
+                    <span className="font-notch text-xs md:text-sm uppercase tracking-wider text-primary">
+                      Featured Article
                     </span>
-                    <span className="text-sm text-white/70">
+                    <span className="text-sm md:text-base text-white/70">
                       {currentFeatured.date}
                     </span>
                   </div>
-                  <a href={currentFeatured.link} className="group">
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-primary transition-colors">
+
+                  {/* Featured Article Title - AS THE HERO */}
+                  <a href={currentFeatured.link} className="group block">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight group-hover:text-primary transition-colors">
                       {currentFeatured.title}
-                    </h2>
+                    </h1>
+
+                    {/* Excerpt */}
                     {currentFeatured.excerpt && (
-                      <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
+                      <p className="text-base md:text-lg lg:text-xl text-white/85 leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto">
                         {currentFeatured.excerpt}
                       </p>
                     )}
-                    <span className="text-sm text-primary hover:underline">
-                      Read Article →
+
+                    {/* CTA */}
+                    <span className="inline-flex items-center gap-2 text-sm md:text-base text-primary hover:underline font-medium">
+                      Read Full Article →
                     </span>
                   </a>
                 </div>
               )}
 
               {/* Navigation Dots */}
-              <div className="flex items-center justify-center gap-3 mt-10">
+              <div className="flex items-center justify-center gap-3 mt-12 md:mt-16">
                 {featuredArticles.slice(0, 3).map((_, index) => (
                   <button
                     key={index}
