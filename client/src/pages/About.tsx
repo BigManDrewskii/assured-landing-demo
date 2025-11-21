@@ -67,7 +67,7 @@ export default function About() {
       </Section>
 
       {/* 02. Introduction Section - Single Column */}
-      <Section number="02">
+      <Section number="02" showPatterns="both">
         <div className="mx-auto px-4 md:px-10 py-16 md:py-24" style={{ maxWidth: "1112px" }}>
           <div className="max-w-4xl mx-auto space-y-8">
             {ABOUT_PAGE_INTRO.mainContent.map((paragraph, idx) => (
@@ -95,7 +95,7 @@ export default function About() {
       </Section>
 
       {/* 04. Client Privacy Section */}
-      <Section number="04">
+      <Section number="04" showPatterns="both">
         <div className="mx-auto px-4 md:px-10 py-12 md:py-20 text-center" style={{ maxWidth: "1112px" }}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 md:mb-12 leading-tight">
             {ABOUT_PAGE_CLIENT_PRIVACY.headline}
@@ -128,7 +128,7 @@ export default function About() {
       </Section>
 
       {/* 06. Team Section - Three Column Grid */}
-      <Section number="06">
+      <Section number="06" showPatterns="both">
         <div className="mx-auto px-4 md:px-10 py-12 md:py-20" style={{ maxWidth: "1112px" }}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16 text-center leading-tight">
             {ABOUT_PAGE_TEAM.headline}
