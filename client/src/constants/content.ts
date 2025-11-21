@@ -815,7 +815,9 @@ export const ABOUT_PAGE_INTRO = {
 };
 
 export const ABOUT_PAGE_COLLABORATION = {
-  content: "We are passionate about working with the cybersecurity industry and believe collaboration is the only way forward. Cyber insurance is not a replacement for cybersecurity. On the contrary, obtaining insurance without a demonstration of good security posture is impossible. That's why we sit at the beating heart of the cyber industry, working with high-profile partners perfectly placed to deliver real-time security feedback, incident planning and resilience enhancement.",
+  contentBefore: "We are passionate about working with the cybersecurity industry and believe collaboration is the only way forward. ",
+  highlight: "Cyber insurance is not a replacement for cybersecurity.",
+  contentAfter: " On the contrary, obtaining insurance without a demonstration of good security posture is impossible. That's why we sit at the beating heart of the cyber industry, working with high-profile partners perfectly placed to deliver real-time security feedback, incident planning and resilience enhancement.",
 };
 
 export const ABOUT_PAGE_CLIENT_PRIVACY = {

@@ -52,36 +52,29 @@ export default function About() {
       {/* 01. Hero Section */}
       <Section>
         <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24 text-center" style={{ maxWidth: "1112px" }}>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-            {ABOUT_PAGE_HERO.headline}
-          </h1>
+          {/* Framed Logo */}
+          <div className="flex justify-center mb-10 md:mb-12">
+            <img
+              src="/assured-official-logo-pack/assured-logo-white/black.svg"
+              alt="Assured Logo"
+              className="h-20 md:h-24 lg:h-28"
+            />
+          </div>
           <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 leading-relaxed max-w-4xl mx-auto">
             {ABOUT_PAGE_HERO.subheadline}
           </p>
         </div>
       </Section>
 
-      {/* 02. Introduction Section - Two Column 55/45 */}
+      {/* 02. Introduction Section - Single Column */}
       <Section number="02">
         <div className="mx-auto px-4 md:px-10 py-16 md:py-24" style={{ maxWidth: "1112px" }}>
-          <div className="grid grid-cols-1 md:grid-cols-[55%_1fr] gap-10 md:gap-16">
-            {/* Left: Main Content */}
-            <div className="space-y-8">
-              {ABOUT_PAGE_INTRO.mainContent.map((paragraph, idx) => (
-                <p key={`intro-${idx}`} className="text-base md:text-lg lg:text-xl text-muted-foreground/85 leading-[1.8]">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-
-            {/* Right: Pull Quote */}
-            <div className="flex items-center justify-center">
-              <div className="border-l-4 md:border-l-8 border-primary pl-6 md:pl-8 py-6 md:py-8">
-                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-foreground leading-tight">
-                  {ABOUT_PAGE_INTRO.pullQuote}
-                </p>
-              </div>
-            </div>
+          <div className="max-w-4xl mx-auto space-y-8">
+            {ABOUT_PAGE_INTRO.mainContent.map((paragraph, idx) => (
+              <p key={`intro-${idx}`} className="text-base md:text-lg lg:text-xl text-muted-foreground/85 leading-[1.8]">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </Section>
@@ -89,9 +82,13 @@ export default function About() {
       {/* 03. Collaboration Philosophy Section */}
       <Section number="03">
         <div className="mx-auto px-4 md:px-10 py-16 md:py-24" style={{ maxWidth: "1112px" }}>
-          <div className="border-l-4 md:border-l-8 border-primary pl-6 md:pl-12 py-6 md:py-10 max-w-5xl">
-            <p className="text-lg md:text-xl lg:text-2xl text-foreground/90 leading-relaxed">
-              {ABOUT_PAGE_COLLABORATION.content}
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="font-notch text-lg md:text-xl lg:text-2xl text-foreground leading-[1.6]">
+              {ABOUT_PAGE_COLLABORATION.contentBefore}
+              <span className="text-primary">
+                {ABOUT_PAGE_COLLABORATION.highlight}
+              </span>
+              {ABOUT_PAGE_COLLABORATION.contentAfter}
             </p>
           </div>
         </div>
