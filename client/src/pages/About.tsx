@@ -61,23 +61,23 @@ export default function About() {
         </div>
       </Section>
 
-      {/* 02. Introduction Section - Two Column 60/40 */}
+      {/* 02. Introduction Section - Two Column 55/45 */}
       <Section number="02">
-        <div className="mx-auto px-4 md:px-10 py-12 md:py-20" style={{ maxWidth: "1112px" }}>
-          <div className="grid grid-cols-1 md:grid-cols-[60%_1fr] gap-8 md:gap-12">
+        <div className="mx-auto px-4 md:px-10 py-16 md:py-24" style={{ maxWidth: "1112px" }}>
+          <div className="grid grid-cols-1 md:grid-cols-[55%_1fr] gap-10 md:gap-16">
             {/* Left: Main Content */}
-            <div className="space-y-6">
+            <div className="space-y-8">
               {ABOUT_PAGE_INTRO.mainContent.map((paragraph, idx) => (
-                <p key={`intro-${idx}`} className="text-base md:text-lg text-muted-foreground/85 leading-relaxed">
+                <p key={`intro-${idx}`} className="text-base md:text-lg lg:text-xl text-muted-foreground/85 leading-[1.8]">
                   {paragraph}
                 </p>
               ))}
             </div>
 
             {/* Right: Pull Quote */}
-            <div className="flex items-center">
-              <div className="border-l-4 border-primary pl-6 py-4">
-                <p className="text-xl md:text-2xl font-semibold text-foreground leading-tight">
+            <div className="flex items-center justify-center">
+              <div className="border-l-4 md:border-l-8 border-primary pl-6 md:pl-8 py-6 md:py-8">
+                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-foreground leading-tight">
                   {ABOUT_PAGE_INTRO.pullQuote}
                 </p>
               </div>
