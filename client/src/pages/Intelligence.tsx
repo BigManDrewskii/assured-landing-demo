@@ -78,83 +78,87 @@ export default function Intelligence() {
 
       <Navigation sections={MENU_SECTIONS} />
 
-      {/* Hero Section - Carousel with Article Backgrounds */}
+      {/* Hero Section - Carousel with Framed Backgrounds */}
       <Section>
-        <div
-          className="relative min-h-[600px] md:min-h-[700px] overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {/* Background Images - Cycling */}
-          {featuredArticles.slice(0, 3).map((article, index) => (
-            <div
-              key={article.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
-              <img
-                src={article.imageUrl}
-                alt={article.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-
-          {/* Content Overlay */}
-          <div className="relative z-20 mx-auto px-4 md:px-10 h-full flex flex-col justify-center" style={{ maxWidth: "1112px" }}>
-            {/* Page Title & Subtitle */}
-            <div className="text-center mb-16 md:mb-20">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-white">
-                {INTELLIGENCE_PAGE_HERO.title}
-              </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-snug tracking-tight max-w-3xl mx-auto">
-                {INTELLIGENCE_PAGE_HERO.subtitle}
-              </p>
-            </div>
-
-            {/* Current Featured Article Info */}
-            {currentFeatured && (
-              <div className="max-w-4xl mx-auto text-center">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <span className="font-notch text-xs uppercase tracking-wider text-primary">
-                    Featured
-                  </span>
-                  <span className="text-sm text-white/70">
-                    {currentFeatured.date}
-                  </span>
-                </div>
-                <a href={currentFeatured.link} className="group">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {currentFeatured.title}
-                  </h2>
-                  {currentFeatured.excerpt && (
-                    <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
-                      {currentFeatured.excerpt}
-                    </p>
-                  )}
-                  <span className="text-sm text-primary hover:underline">
-                    Read Article →
-                  </span>
-                </a>
-              </div>
-            )}
-
-            {/* Navigation Dots */}
-            <div className="flex items-center justify-center gap-3 mt-12">
-              {featuredArticles.slice(0, 3).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentSlide
-                      ? "bg-primary w-8"
-                      : "bg-white/40 hover:bg-white/60"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
+        <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24" style={{ maxWidth: "1112px" }}>
+          {/* Carousel Frame Container */}
+          <div
+            className="relative min-h-[500px] md:min-h-[600px] border border-border overflow-hidden"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Background Images - Cycling (Contained within frame) */}
+            {featuredArticles.slice(0, 3).map((article, index) => (
+              <div
+                key={article.id}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
+                <img
+                  src={article.imageUrl}
+                  alt={article.title}
+                  className="w-full h-full object-cover"
                 />
-              ))}
+              </div>
+            ))}
+
+            {/* Content Overlay */}
+            <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 py-12">
+              {/* Page Title & Subtitle */}
+              <div className="text-center mb-12 md:mb-16">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight text-white">
+                  {INTELLIGENCE_PAGE_HERO.title}
+                </h1>
+                <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-snug tracking-tight max-w-3xl mx-auto">
+                  {INTELLIGENCE_PAGE_HERO.subtitle}
+                </p>
+              </div>
+
+              {/* Current Featured Article Info */}
+              {currentFeatured && (
+                <div className="max-w-4xl mx-auto text-center">
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <span className="font-notch text-xs uppercase tracking-wider text-primary">
+                      Featured
+                    </span>
+                    <span className="text-sm text-white/70">
+                      {currentFeatured.date}
+                    </span>
+                  </div>
+                  <a href={currentFeatured.link} className="group">
+                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight group-hover:text-primary transition-colors">
+                      {currentFeatured.title}
+                    </h2>
+                    {currentFeatured.excerpt && (
+                      <p className="text-base md:text-lg text-white/80 leading-relaxed mb-6">
+                        {currentFeatured.excerpt}
+                      </p>
+                    )}
+                    <span className="text-sm text-primary hover:underline">
+                      Read Article →
+                    </span>
+                  </a>
+                </div>
+              )}
+
+              {/* Navigation Dots */}
+              <div className="flex items-center justify-center gap-3 mt-10">
+                {featuredArticles.slice(0, 3).map((_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? "bg-primary w-8"
+                        : "bg-white/40 hover:bg-white/60"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
