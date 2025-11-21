@@ -9,10 +9,14 @@ interface CategorySectionProps {
   ctaText: string;
   onCtaClick?: () => void;
   maxWidth?: number;
+  variant?: "3-col" | "2-col";
 }
 
 /**
  * CategorySection - Reusable section for displaying articles by category
+ * Supports two layout variants:
+ * - 3-col: Shows 3 articles in 3 columns (compact)
+ * - 2-col: Shows 4 articles in 2 columns (larger cards)
  */
 export function CategorySection({
   title,
@@ -21,8 +25,13 @@ export function CategorySection({
   ctaText,
   onCtaClick,
   maxWidth = 1112,
+  variant = "3-col",
 }: CategorySectionProps) {
   if (articles.length === 0) return null;
+
+  const is3Col = variant === "3-col";
+  const articleCount = is3Col ? 3 : 4;
+  const gridCols = is3Col ? "md:grid-cols-3" : "md:grid-cols-2";
 
   return (
     <div className="border-b border-border">
@@ -38,13 +47,17 @@ export function CategorySection({
           </Button>
         </div>
 
-        {/* Articles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {articles.slice(0, 3).map((article, index) => (
+        {/* Articles Grid - Responsive Layout */}
+        <div className={`grid grid-cols-1 ${gridCols}`}>
+          {articles.slice(0, articleCount).map((article, index) => (
             <ArticleCard
               key={article.id}
               {...article}
-              className={index < 2 ? "md:border-r border-border" : ""}
+              className={
+                is3Col
+                  ? index < 2 ? "md:border-r border-border" : ""
+                  : index % 2 === 0 ? "md:border-r border-border" : ""
+              }
             />
           ))}
         </div>

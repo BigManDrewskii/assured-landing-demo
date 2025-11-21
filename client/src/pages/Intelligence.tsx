@@ -65,14 +65,14 @@ export default function Intelligence() {
 
       {/* Hero Section - 2 Column Layout */}
       <Section>
-        <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24" style={{ maxWidth: "1112px" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="mx-auto px-4 md:px-10 pt-40 pb-24 md:pt-52 md:pb-32" style={{ maxWidth: "1112px" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
             {/* Left: Title & Subtitle */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 md:mb-8 leading-tight">
                 {INTELLIGENCE_PAGE_HERO.title}
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 leading-relaxed">
+              <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground/80 leading-snug tracking-tight">
                 {INTELLIGENCE_PAGE_HERO.subtitle}
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function Intelligence() {
               {featuredArticles[0] && (
                 <a
                   href={featuredArticles[0].link}
-                  className="group block border border-border hover:border-primary/50 transition-all overflow-hidden"
+                  className="group block border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all overflow-hidden"
                 >
                   {/* Featured Image */}
                   <div className="aspect-video overflow-hidden bg-muted/20 border-b border-border">
@@ -187,7 +187,7 @@ export default function Intelligence() {
         <>
           {/* Trending Section */}
           {trendingArticles.length > 0 && (
-            <Section>
+            <Section showPatterns="both">
               <div className="mx-auto" style={{ maxWidth: "1112px" }}>
                 <div className="px-4 md:px-8 py-8 md:py-12 border-b border-border flex items-center justify-between">
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Trending</h2>
@@ -206,48 +206,73 @@ export default function Intelligence() {
             </Section>
           )}
 
-          {/* Category Sections */}
-          <CategorySection
-            title="Assured Reacts"
-            tagline="Assured hot takes"
-            articles={getArticlesByCategory("assured-reacts")}
-            ctaText="Assured hot takes"
-          />
+          {/* Category Sections - Alternating Layouts and Patterns */}
 
-          <CategorySection
-            title="Features"
-            tagline="Feature library"
-            articles={getArticlesByCategory("features")}
-            ctaText="Feature library"
-          />
+          {/* Assured Reacts - 3 Column */}
+          <Section showPatterns="both">
+            <CategorySection
+              title="Assured Reacts"
+              tagline="Assured hot takes"
+              articles={getArticlesByCategory("assured-reacts")}
+              ctaText="Assured hot takes"
+              variant="3-col"
+            />
+          </Section>
 
-          <CategorySection
-            title="Weekly Cyber Briefing"
-            tagline="What's hitting the news?"
-            articles={getArticlesByCategory("weekly-briefing")}
-            ctaText="What's hitting the news?"
-          />
+          {/* Features - 2 Column Larger Cards */}
+          <Section>
+            <CategorySection
+              title="Features"
+              tagline="Feature library"
+              articles={getArticlesByCategory("features")}
+              ctaText="Feature library"
+              variant="2-col"
+            />
+          </Section>
 
-          <CategorySection
-            title="Interviews"
-            tagline="More inspiring stories"
-            articles={getArticlesByCategory("interviews")}
-            ctaText="More inspiring stories"
-          />
+          {/* Weekly Cyber Briefing - 3 Column */}
+          <Section showPatterns="both">
+            <CategorySection
+              title="Weekly Cyber Briefing"
+              tagline="What's hitting the news?"
+              articles={getArticlesByCategory("weekly-briefing")}
+              ctaText="What's hitting the news?"
+              variant="3-col"
+            />
+          </Section>
 
-          <CategorySection
-            title="Blogs & Opinions"
-            tagline="More expert opinions"
-            articles={getArticlesByCategory("blogs-opinions")}
-            ctaText="More expert opinions"
-          />
+          {/* Interviews - 2 Column Larger Cards */}
+          <Section>
+            <CategorySection
+              title="Interviews"
+              tagline="More inspiring stories"
+              articles={getArticlesByCategory("interviews")}
+              ctaText="More inspiring stories"
+              variant="2-col"
+            />
+          </Section>
 
-          <CategorySection
-            title="Podcasts"
-            tagline="Listen up; there's more"
-            articles={getArticlesByCategory("podcasts")}
-            ctaText="Listen up; there's more"
-          />
+          {/* Blogs & Opinions - 3 Column */}
+          <Section showPatterns="both">
+            <CategorySection
+              title="Blogs & Opinions"
+              tagline="More expert opinions"
+              articles={getArticlesByCategory("blogs-opinions")}
+              ctaText="More expert opinions"
+              variant="3-col"
+            />
+          </Section>
+
+          {/* Podcasts - 2 Column Larger Cards */}
+          <Section>
+            <CategorySection
+              title="Podcasts"
+              tagline="Listen up; there's more"
+              articles={getArticlesByCategory("podcasts")}
+              ctaText="Listen up; there's more"
+              variant="2-col"
+            />
+          </Section>
         </>
       )}
 
