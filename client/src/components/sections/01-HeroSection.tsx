@@ -46,7 +46,7 @@ export function HeroSection({
       >
         {/* Hero Background Animation */}
         {animationPath && (
-          <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute inset-0 pointer-events-none z-0 opacity-64">
             <UnicornAnimation
               jsonFilePath={animationPath}
               className="w-full h-full"
@@ -56,7 +56,10 @@ export function HeroSection({
 
         {/* Content */}
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.05] text-foreground">
+          <h1
+            className="text-2xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6 md:mb-8 leading-[1.05] text-foreground"
+            style={{ textShadow: '0 2px 12px rgba(0, 0, 0, 0.24)' }}
+          >
             {headlineParts.map((part, idx) => (
               <span key={`headline-${idx}`}>
                 {part}
@@ -65,14 +68,17 @@ export function HeroSection({
             ))}
           </h1>
 
-          <p className="text-lg md:text-2xl lg:text-3xl text-foreground/95 mb-8 md:mb-12 max-w-3xl mx-auto font-normal leading-relaxed">
+          <p
+            className="text-lg md:text-2xl lg:text-3xl text-foreground/95 mb-8 md:mb-12 max-w-3xl mx-auto font-normal leading-relaxed"
+            style={{ textShadow: '0 2px 12px rgba(0, 0, 0, 0.24)' }}
+          >
             {subheadline}
           </p>
 
           <div className="flex gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-primary text-primary-foreground font-medium px-6 md:px-8 h-11 md:h-12 btn-enhanced shadow-purple-glow text-sm md:text-base"
+              className="bg-primary text-primary-foreground px-6 md:px-8 h-11 md:h-12 btn-enhanced text-sm md:text-base"
               onClick={onCtaClick}
             >
               {ctaText}

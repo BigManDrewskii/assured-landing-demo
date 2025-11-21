@@ -20,7 +20,7 @@ export function ServicesGridSection({
   maxWidth = 1112,
 }: ServicesGridSectionProps) {
   return (
-    <Section number="03" showPatterns="both">
+    <Section number="03">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
         <div className="text-center px-4 md:px-8 py-12 md:py-16 border-b border-border">

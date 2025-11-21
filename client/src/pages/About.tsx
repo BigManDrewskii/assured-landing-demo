@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/layout/Section";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+import { AnimationIntroSection } from "@/components/sections/AnimationIntroSection";
 import {
   MENU_SECTIONS,
   CONTACT_INFO,
@@ -65,6 +66,9 @@ export default function About() {
           </p>
         </div>
       </Section>
+
+      {/* Animation Intro Section */}
+      <AnimationIntroSection animationPath="/assured-hi-bg-animation.json" />
 
       {/* 02. Introduction Section - Single Column */}
       <Section number="02" showPatterns="both">

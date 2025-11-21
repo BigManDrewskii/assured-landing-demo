@@ -10,7 +10,7 @@ interface ChallengeSectionProps {
 }
 
 /**
- * ChallengeSection - Two-column layout with title and body content
+ * ChallengeSection - Centered, stacked layout with title and body content
  */
 export function ChallengeSection({
   title,
@@ -20,39 +20,38 @@ export function ChallengeSection({
   maxWidth = 1112,
 }: ChallengeSectionProps) {
   return (
-    <Section number="02">
+    <Section number="03" showPatterns="both">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
-        <div className="grid md:grid-cols-[40%_1fr] gap-8 md:gap-12 px-4 md:px-10 py-12 md:py-20">
-          {/* Left: Section Title */}
-          <div>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
-              {title}
-            </h2>
-          </div>
+        <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 md:px-10 py-12 md:py-20">
+          {/* Section Title */}
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mb-8 md:mb-12">
+            {title}
+          </h2>
 
-          {/* Right: Body Content */}
-          <div className="space-y-4 md:space-y-6">
+          {/* Body Content */}
+          <div className="w-full max-w-3xl mx-auto space-y-4 md:space-y-6">
             {content.map((paragraph, idx) => (
               <p
                 key={`para-${idx}`}
-                className={`text-base md:text-lg leading-relaxed ${
+                className={`text-base md:text-lg leading-relaxed text-center ${
                   idx === content.length - 1
-                    ? "text-muted-foreground/90 italic border-l-2 border-primary/50 pl-4 md:pl-6"
+                    ? "text-muted-foreground/90 italic mt-6 md:mt-8"
                     : "text-muted-foreground/80"
                 }`}
               >
                 {paragraph}
               </p>
             ))}
-
-            {ctaText && (
-              <div className="pt-4 md:pt-6">
-                <Button variant="outline" onClick={onCtaClick} className="min-h-[44px]">
-                  {ctaText}
-                </Button>
-              </div>
-            )}
           </div>
+
+          {/* CTA Button */}
+          {ctaText && (
+            <div className="mt-8 md:mt-12">
+              <Button variant="outline" onClick={onCtaClick} className="min-h-[44px]">
+                {ctaText}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </Section>

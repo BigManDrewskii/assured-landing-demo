@@ -66,7 +66,7 @@ export function CTASection({
             {primaryButton && (
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground font-medium px-6 md:px-8 h-11 md:h-12 btn-enhanced shadow-purple-glow text-sm md:text-base"
+                className="bg-primary text-primary-foreground px-6 md:px-8 h-11 md:h-12 btn-enhanced text-sm md:text-base"
                 onClick={primaryButton.onClick}
               >
                 {primaryButton.text}

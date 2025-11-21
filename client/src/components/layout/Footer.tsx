@@ -60,27 +60,25 @@ export function Footer({
       {/* Decorative Grid Patterns - Tiled on Footer Edges */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="max-w-[1112px] mx-auto h-full relative">
-          {/* Left Tiled Grid Pattern */}
+          {/* Left Tiled Pinstripe Pattern */}
           <div
-            className="absolute left-0 top-0 bottom-0 w-[408px] -translate-x-full opacity-50"
+            className="absolute left-0 top-0 bottom-0 w-[100vw] -translate-x-full opacity-100"
             style={{
-              backgroundImage: "url(/grid-pattern.svg)",
-              backgroundRepeat: "repeat-y",
-              backgroundSize: "408px auto",
+              backgroundImage: "url(/pinstriped_suit.webp)",
+              backgroundRepeat: "repeat",
+              backgroundSize: "auto",
               backgroundPosition: "center top",
-              filter: "brightness(0.4) contrast(0.6)",
             }}
           />
 
-          {/* Right Tiled Grid Pattern */}
+          {/* Right Tiled Pinstripe Pattern */}
           <div
-            className="absolute right-0 top-0 bottom-0 w-[408px] translate-x-full opacity-50"
+            className="absolute right-0 top-0 bottom-0 w-[100vw] translate-x-full opacity-100"
             style={{
-              backgroundImage: "url(/grid-pattern.svg)",
-              backgroundRepeat: "repeat-y",
-              backgroundSize: "408px auto",
+              backgroundImage: "url(/pinstriped_suit.webp)",
+              backgroundRepeat: "repeat",
+              backgroundSize: "auto",
               backgroundPosition: "center top",
-              filter: "brightness(0.4) contrast(0.6)",
             }}
           />
         </div>

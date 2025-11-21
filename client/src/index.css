@@ -208,7 +208,6 @@
 /* Enhanced Button Hover */
 .btn-enhanced:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
 }
 
 /* Card Hover Effect */
@@ -232,14 +231,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Purple Glow Shadow */
-.shadow-purple-glow {
+/* Purple Glow Shadow - Deprecated */
+/* .shadow-purple-glow {
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
-}
+} */
 
-.shadow-purple-glow-strong {
+/* .shadow-purple-glow-strong {
   box-shadow: 0 0 40px rgba(139, 92, 246, 0.5);
-}
+} */
 
 /* Typography - Stack Sans Notch for labels and technical UI text */
 .font-notch {

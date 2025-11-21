@@ -56,6 +56,7 @@ export default function WhatWeDo() {
         headline={WHAT_WE_DO_PAGE_HERO.headline}
         subheadline={WHAT_WE_DO_PAGE_HERO.subheadline}
         ctaText="Get Started"
+        animationPath="/assured-what-we-do-bg-animation.json"
       />
 
       {/* 02. Challenging the Status Quo */}

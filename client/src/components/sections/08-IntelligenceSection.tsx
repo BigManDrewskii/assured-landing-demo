@@ -41,7 +41,7 @@ export function IntelligenceSection({
   maxWidth = 1112,
 }: IntelligenceSectionProps) {
   return (
-    <Section id="intelligence" number="07" className="overflow-hidden">
+    <Section id="intelligence" number="07" className="overflow-hidden" showPatterns="both">
       <div className="container mx-auto relative overflow-hidden" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Intelligence Section Background Animation */}
         {animationPath && (

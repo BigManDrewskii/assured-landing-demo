@@ -116,7 +116,7 @@ export function Navigation({
           {/* CTA Button - smaller text on mobile */}
           <Button
             size="sm"
-            className="bg-primary text-primary-foreground font-medium btn-enhanced shadow-purple-glow text-xs md:text-sm"
+            className="bg-primary text-primary-foreground btn-enhanced text-xs md:text-sm"
             onClick={onCtaClick}
           >
             {ctaText}

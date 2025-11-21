@@ -302,7 +302,7 @@ export default function Intelligence() {
                 required
                 className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
               />
-              <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
+              <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px] btn-enhanced shadow-purple-glow">
                 {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
               </Button>
             </form>

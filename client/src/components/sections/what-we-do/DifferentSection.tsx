@@ -19,11 +19,11 @@ export function DifferentSection({
   maxWidth = 1112,
 }: DifferentSectionProps) {
   return (
-    <Section number="04">
+    <Section number="04" showPatterns="both">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
         <div className="text-center px-4 md:px-8 py-12 md:py-16 border-b border-border">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-notch font-bold leading-tight">
             {title}
           </h2>
         </div>
