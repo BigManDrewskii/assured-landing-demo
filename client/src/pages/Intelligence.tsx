@@ -78,38 +78,37 @@ export default function Intelligence() {
 
       <Navigation sections={MENU_SECTIONS} />
 
-      {/* Hero Section - Carousel with Framed Backgrounds */}
+      {/* Hero Section - Full Carousel Backgrounds */}
       <Section>
-        <div className="mx-auto px-4 md:px-10 pt-40 pb-16 md:pt-52 md:pb-24" style={{ maxWidth: "1112px" }}>
-          {/* Carousel Frame Container */}
-          <div
-            className="relative min-h-[500px] md:min-h-[600px] border border-border overflow-hidden"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Background Images - Cycling (Contained within frame) */}
-            {featuredArticles.slice(0, 3).map((article, index) => (
-              <div
-                key={article.id}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
-                <img
-                  src={article.imageUrl}
-                  alt={article.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+        <div
+          className="relative min-h-[600px] md:min-h-[700px] overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Background Images - Cycling (Full Section) */}
+          {featuredArticles.slice(0, 3).map((article, index) => (
+            <div
+              key={article.id}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 z-10" />
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
 
-            {/* Content Overlay - Featured Article as Hero */}
-            <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 lg:px-16 py-12 md:py-16">
+          {/* Content Overlay - Featured Article Fills Hero Space */}
+          <div className="relative z-20 h-full flex flex-col justify-center">
+            <div className="mx-auto px-4 md:px-10 py-16 md:py-20" style={{ maxWidth: "1112px" }}>
               {currentFeatured && (
                 <div className="max-w-5xl mx-auto text-center">
                   {/* Featured Badge & Date */}
-                  <div className="flex items-center justify-center gap-4 mb-6 md:mb-8">
+                  <div className="flex items-center justify-center gap-4 mb-8 md:mb-10">
                     <span className="font-notch text-xs md:text-sm uppercase tracking-wider text-primary">
                       Featured Article
                     </span>
@@ -118,21 +117,21 @@ export default function Intelligence() {
                     </span>
                   </div>
 
-                  {/* Featured Article Title - AS THE HERO */}
+                  {/* Featured Article Title - THE HERO */}
                   <a href={currentFeatured.link} className="group block">
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 md:mb-8 leading-tight group-hover:text-primary transition-colors">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 md:mb-10 leading-[1.1] group-hover:text-primary transition-colors">
                       {currentFeatured.title}
                     </h1>
 
                     {/* Excerpt */}
                     {currentFeatured.excerpt && (
-                      <p className="text-base md:text-lg lg:text-xl text-white/85 leading-relaxed mb-8 md:mb-10 max-w-3xl mx-auto">
+                      <p className="text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed mb-10 md:mb-12 max-w-4xl mx-auto">
                         {currentFeatured.excerpt}
                       </p>
                     )}
 
                     {/* CTA */}
-                    <span className="inline-flex items-center gap-2 text-sm md:text-base text-primary hover:underline font-medium">
+                    <span className="inline-flex items-center gap-2 text-base md:text-lg text-primary hover:underline font-medium">
                       Read Full Article →
                     </span>
                   </a>
@@ -140,7 +139,7 @@ export default function Intelligence() {
               )}
 
               {/* Navigation Dots */}
-              <div className="flex items-center justify-center gap-3 mt-12 md:mt-16">
+              <div className="flex items-center justify-center gap-3 mt-16 md:mt-20">
                 {featuredArticles.slice(0, 3).map((_, index) => (
                   <button
                     key={index}
@@ -272,33 +271,49 @@ export default function Intelligence() {
 
       {/* Newsletter Signup CTA */}
       <Section>
-        <div className="mx-auto px-4 md:px-8 py-12 md:py-20 text-center" style={{ maxWidth: "800px" }}>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-            {INTELLIGENCE_PAGE_NEWSLETTER.title}
-          </h2>
-          <p className="text-base md:text-lg text-muted-foreground/80 mb-6 md:mb-8">
-            {INTELLIGENCE_PAGE_NEWSLETTER.subtitle}
-          </p>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setShowNewsletter(true);
+        <div
+          className="mx-auto px-4 md:px-8 py-12 md:py-20 text-center relative"
+          style={{ maxWidth: "800px" }}
+        >
+          {/* Background Pattern */}
+          <div
+            className="absolute inset-0 opacity-5 pointer-events-none"
+            style={{
+              backgroundImage: "url(/squared_metal.png)",
+              backgroundSize: "200px 200px",
+              backgroundRepeat: "repeat"
             }}
-            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
-              className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
-            />
-            <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
-              {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
-            </Button>
-          </form>
-          <p className="text-xs text-muted-foreground/60 mt-3 md:mt-4">
-            {INTELLIGENCE_PAGE_NEWSLETTER.privacyNote}
-          </p>
+          />
+
+          {/* Content */}
+          <div className="relative z-10">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+              {INTELLIGENCE_PAGE_NEWSLETTER.title}
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground/80 mb-6 md:mb-8">
+              {INTELLIGENCE_PAGE_NEWSLETTER.subtitle}
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setShowNewsletter(true);
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+                className="flex-1 px-4 py-3 bg-transparent border border-border focus:border-primary focus:outline-none transition-colors min-h-[44px]"
+              />
+              <Button type="submit" size="lg" className="w-full sm:w-auto min-h-[44px]">
+                {INTELLIGENCE_PAGE_NEWSLETTER.submitText}
+              </Button>
+            </form>
+            <p className="text-xs text-muted-foreground/60 mt-3 md:mt-4">
+              {INTELLIGENCE_PAGE_NEWSLETTER.privacyNote}
+            </p>
+          </div>
         </div>
       </Section>
 
