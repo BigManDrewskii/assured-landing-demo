@@ -4,7 +4,6 @@ import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/01-HeroSection";
 import { IntroSection } from "@/components/sections/02-IntroSection";
-import { ThreePillars } from "@/components/sections/03-ThreePillars";
 import { WhatWeDoSection } from "@/components/sections/04-WhatWeDoSection";
 import { PartnershipSection } from "@/components/sections/05-PartnershipSection";
 import { ComparisonSection } from "@/components/sections/06-ComparisonSection";
@@ -98,9 +97,8 @@ export default function Home() {
         logoSrc={INTRO_CONTENT.logoSrc}
         logoAlt={INTRO_CONTENT.logoAlt}
         description={INTRO_CONTENT.description}
+        pillars={THREE_PILLARS}
       />
-
-      <ThreePillars pillars={THREE_PILLARS} animationPath={THREE_PILLARS_ANIMATION_PATH} />
 
       <WhatWeDoSection
         label={WHAT_WE_DO_CONTENT.label}

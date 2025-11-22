@@ -44,7 +44,7 @@ export function PartnershipSection({
   maxWidth = 1112,
 }: PartnershipSectionProps) {
   return (
-    <Section number="04">
+    <Section number="04" showPatterns="both">
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         {/* Header */}
         <div className="text-center px-8 py-16 border-b border-border">

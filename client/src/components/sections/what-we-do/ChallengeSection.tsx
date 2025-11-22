@@ -24,7 +24,7 @@ export function ChallengeSection({
       <div className="mx-auto" style={{ maxWidth: `${maxWidth}px` }}>
         <div className="flex flex-col items-center justify-center min-h-[60vh] px-4 md:px-10 py-12 md:py-20">
           {/* Section Title */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center mb-8 md:mb-12">
             {title}
           </h2>
 
