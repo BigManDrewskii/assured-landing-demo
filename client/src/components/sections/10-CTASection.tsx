@@ -49,7 +49,7 @@ export function CTASection({
       >
         {/* CTA Background Animation */}
         {animationPath && (
-          <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute inset-0 pointer-events-none z-0 opacity-64">
             <UnicornAnimation
               jsonFilePath={animationPath}
               className="w-full h-full"
